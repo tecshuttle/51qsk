@@ -1,0 +1,51 @@
+管理后台 {
+    seed.zenho.com/index.php?r=admini
+    name: admin
+    password: 123
+}
+
+zenho服务器部署 {
+    FTP 
+        帐号 51qsk
+        密码 51qsk
+
+    数据库
+        数据库名 seed
+        帐号 51qsk 
+        密码 51qsk
+}
+
+
+
+阿里云服务器部署 {
+    账户名：hi30839021@aliyun.com
+    密码：no1wyqsk2015
+    注：阿里云停机，需要向Linna的邮箱或手机发送验证信息。变更配置的操作，没有Linna的协助操作不了。
+
+    120.25.66.187
+    用户名：root
+    密码：Wyqsk76656878
+
+    php环境配置方法   http://lnmp.org/install.html
+
+    数据库名 seed
+    帐号 root
+    密码 seed
+}
+
+FTP {
+    ftp安装 yum -y install vsftpd
+    useradd   -d /home/wwwroot       sqk
+    passwd   pwftp  （密码：seed）
+}
+
+lnmp配置信息 {
+    lnmp status manage: lnmp {start|stop|reload|restart|kill|status}
+    phpMyAdmin: http://IP/phpmyadmin/
+    phpinfo: http://IP/phpinfo.php
+    Prober:  http://IP/p.php
+    Add VirtualHost: lnmp vhost add
+    Default directory: /home/wwwroot/default
+}
+
+EOF

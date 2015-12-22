@@ -1,0 +1,192 @@
+@charset "utf-8";
+/* FONT PATH
+ * -------------------------- */
+
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+	src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+	background-color: #edeff1;
+}
+.redBorder,
+.greenBorder,
+.yellowBorder {
+	border-top: 8px solid #282b36;
+	width: 33.33%;
+	float: left;
+	height: 16px;
+	position: relative;
+	z-index: 50;
+}
+.redBorder {
+	background-color: #f33e6f;
+}
+.greenBorder {
+	background-color: #46bfbd;
+}
+.yellowBorder {
+	background-color: #fdb45c;
+}
+.panel-diy {
+	border-color: #BDC0C7;
+	-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .05);
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .05);
+}
+.panel-diy > .panel-heading {
+	color: #111;
+	background-color: rgba(189, 192, 199, 0.7);
+	border-color: #BDC0C7;
+}
+/*==============后台数据分析================ */
+
+.chart-wrap {
+	width: 100%;
+	height: 100%;
+	width: 100vw;
+	margin: 0 auto;
+	position: relative;
+}
+.chart-header {
+	padding-top: 20px;
+}
+.chart-main {
+	width: 100%;
+	width: 100vw;
+	height: auto;
+}
+.container {
+	width: 1030px !important;
+}
+.chart-inner {
+	padding-top: 20px;
+}
+.chart-inner > .panel:not(:first-child) {
+	margin-top: 50px;
+}
+.chart-inner > .panel:last-child {
+	margin-bottom: 30px;
+}
+.chart-inner h3 {
+	font-size: 20px;
+	display: inline-block;
+}
+.chart-inner h3 small {
+	margin-left: 5px;
+}
+.chart-inner .panel-heading .fa {
+	margin-right: 5px;
+}
+.chart-inner .canvas {
+	width: 98%;
+	margin: 0 auto;
+}
+.chart-inner .canvas figcaption {
+	padding-right: 20px;
+	margin-top: 10px;
+}
+.chart-inner .table {
+	margin-bottom: 0;
+}
+.chart-inner .table > thead > tr > th,
+.chart-inner .table > tbody > tr > th,
+.chart-inner .table > tfoot > tr > th,
+.chart-inner .table > thead > tr > td,
+.chart-inner .table > tbody > tr > td,
+.chart-inner .table > tfoot > tr > td {
+	vertical-align: middle;
+	padding: 12px 8px;
+}
+.chart-inner .table > thead > tr > th:first-child,
+.chart-inner .table > tfoot > tr > th:first-child,
+.chart-inner .table > tbody > tr > th:first-child,
+.chart-inner .table > tbody > tr > td:first-child {
+	padding-left: 25px;
+}
+.thumbnail-chart {
+	padding-left: 35px;
+}
+.thumbnail-chart .center-block {
+	height: 25px;
+	line-height: 25px;
+}
+.thumbnail-chart .center-block + .center-block {
+	margin-top: 5px;
+}
+.thumbnail-chart .center-block b {
+	float: left;
+	display: inline-block;
+	content: '';
+	width: 40px;
+	height: 25px;
+}
+.thumbnail-chart .center-block i {
+	float: left;
+	display: inline-block;
+	margin-left: 8px;
+	font-style: normal;
+}
+/*成交总金额*/
+
+.data-chart-money .thumbnail-chart .center-block:last-child > b {
+	background-color: rgba(52, 152, 219, 0.8);
+}
+/*各分类中已报名课程和发布课程总量*/
+
+.data-chart-class .thumbnail-chart .center-block:first-child > b {
+	background-color: rgba(182, 201, 219, 0.7);
+}
+.data-chart-class .thumbnail-chart .center-block:last-child > b {
+	background-color: rgba(52, 152, 219, 0.8);
+}
+/*课程活跃度和学员活跃度*/
+
+.collapse .panel{
+	margin-bottom: 5px;
+}
+
+.data-chart-visit figure {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.data-chart-visit figure > figcaption {
+	margin-bottom: 15px;
+}
+.canvas-visit {
+	margin: 0 auto;
+}
+.circliful {
+	position: relative;
+}
+.circle-text,
+.circle-info,
+.circle-text-half,
+.circle-info-half {
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	display: inline-block;
+}
+.circle-info,
+.circle-info-half {
+	color: #999;
+}
+.circliful .fa {
+	margin: -10px 3px 0 3px;
+	position: relative;
+	bottom: 4px;
+}
+/*帮组类文字说明*/
+
+.text-help {
+	font-size: 15px;
+}
+.text-help .fa {
+	margin-right: 5px;
+}
+.text-help .fa-exclamation-circle {
+	color: red;
+}

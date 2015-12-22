@@ -1,0 +1,772 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8 lte9" lang="zh-cn"><![endif]-->
+<!--[if IE 9]><html class="ie9 lte9" lang="zh-cn"><![endif]-->
+<!--[if !(IE 8) | !(IE 9)]><!-->
+<html lang="zh-cn">
+	<!--<![endif]-->
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<title>导师介绍详细页</title>
+
+		<!--/*=====================▼开发版样式表, 用于修改和维护▼==================*/-->
+		<link rel="stylesheet" href="assets/css/bootstrap.css" media="screen">
+		<link rel="stylesheet" href="assets/css/bootstrap-plus.css" media="screen">
+		<link rel="stylesheet" href="assets/css/font-awesome.css" media="screen">
+		<link rel="stylesheet" href="assets/css/layout.css" media="screen">
+		<link rel="stylesheet" href="assets/css/components.css" media="screen">
+		<link rel="stylesheet" href="assets/css/modules.css" media="screen">
+
+		<!--/*=====================▼程序猿生产使用下面的压缩版样式表▼==================*/-->
+		<!--
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen">
+		<link rel="stylesheet" href="assets/css/bootstrap-plus.min.css" media="screen">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" media="screen">
+		<link rel="stylesheet" href="assets/css/layout.min.css" media="screen">
+		<link rel="stylesheet" href="assets/css/components.min.css" media="screen">
+		<link rel="stylesheet" href="assets/css/modules.min.css" media="screen">
+         -->
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if IE 8]>
+        <script src="assets/js/help/html5shiv.min.js"></script>
+        <script src="assets/js/help/respond.min.js"></script>
+        <script src="assets/js/help/selectivizr.min.js"></script>
+        <script src="assets/js/help/rem.min.js"></script>
+        <![endif]-->
+
+		<!------Kill IE------>
+		<!--[if lte IE 7 ]>
+		<link rel="stylesheet" href="assets/iealert/iealert.min.css">
+		<script src="assets/iealert/jquery.min.js"></script>
+		<script src="assets/iealert/dd_belatedpng.min.js"></script>
+		<script src="assets/iealert/iealert.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("body").iealert();
+			});
+		</script>
+		<![endif]-->
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<!----全站空链接已交给jQuery自动处理成"javascript:void(0)"---->
+		<a href="#content" class="sr-only">Skip to main content</a>
+
+		<div class="site-wrap">
+
+			<!--/*==========================▼site-header▼=========================*/-->
+			<header class="site-header">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-xs-8">
+							<!--site-menu-->
+							<nav class="clearfix site-menu">
+								<!--active为选中类-->
+								<a href="index.html">
+									<strong>首页</strong>
+								</a>
+								<a href="subject.html">
+									<strong>课程汇总</strong>
+								</a>
+								<a href="teacher.html">
+									<strong>名师库</strong>
+								</a>
+								<a href="family.html">
+									<strong>亲子成长</strong>
+								</a>
+								<a href="company.html">
+									<strong>企业定制</strong>
+								</a>
+							</nav>
+						</div>
+
+						<div class="col-xs-4">
+
+							<div class="text-center pull-right top-info">
+								<a href="#">张大海,您好</a>
+								<a href="#">退出</a>
+								<a href="contact.html">联系我们</a>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</header>
+			<!--/.site-header end -->
+
+			<!--/*==========================▼site-nav▼=========================*/-->
+			<nav class="site-nav" role="navigation">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-xs-3">
+							<!--LOGO-->
+							<a class="brand" href="index.html" title="种子网络平台|禅意东方|展示东方文化及东方美学系列课程的网络平台">
+								<!--H1标签内的内容可作为SEO来优化-->
+								<h1>种子网络平台|禅意东方|展示东方文化及东方美学系列课程的网络平台</h1>
+							</a>
+						</div>
+
+						<div class="col-xs-9">
+							<!--课程分类-->
+							<ul class="list-inline clearfix text-center class-menu" role="list">
+								<li role="listitem">
+									<a href="subject.html" title="国学经典">
+								      国学经典
+							    </a>
+								</li>
+								<li role="listitem">
+									<a href="subject.html" title="中医养生">
+								      中医养生
+							    </a>
+								</li>
+								<li role="listitem">
+									<a href="subject.html" title="禅修瑜伽">
+								      禅修瑜伽
+							    </a>
+								</li>
+								<li role="listitem">
+									<a href="subject.html" title="茶道茶艺">
+								       茶道茶艺
+							    </a>
+								</li>
+								<li role="listitem">
+									<a href="subject.html" title="中式香道">
+								      中式香道
+							    </a>
+								</li>
+								<li role="listitem">
+									<a href="subject.html" title="民乐曲艺">
+								     民乐曲艺
+							    </a>
+								</li>
+								<li role="listitem">
+									<a href="subject.html" title="书法绘画">
+								     书法绘画
+							    </a>
+								</li>
+								<li role="listitem">
+									<a href="subject.html" title="花卉艺术">
+								      花卉艺术
+							    </a>
+								</li>
+								<li role="listitem">
+									<a href="subject.html" title="中华武术">
+								      中华武术
+							    </a>
+								</li>
+								<li role="listitem">
+									<a href="subject.html" title="传统服饰">
+								      传统服饰
+							    </a>
+								</li>
+							</ul>
+							<!--/.class-menu end-->
+
+						</div>
+
+					</div>
+				</div>
+			</nav>
+			<!--/.site-nav end -->
+
+			<!--/*==========================▼site-main▼=========================*/-->
+			<main class="site-main md-teacher-detail" role="main">
+				<div class="container">
+
+					<header class="cp-detail-header">
+						<figure class="media cp-media-lager">
+							<div class="media-left">
+								<img class="media-object" src="assets/img/product/teacher-detail.jpg">
+							</div>
+
+							<figcaption class="media-body">
+								<h3 class="media-heading">李大海</h3>
+
+								<span class="center-block good">擅长领域：茶道茶艺</span>
+								<ul class="list-inline">
+									<li>从业经验：25年</li>
+									<li>人气：2534</li>
+								</ul>
+
+								<!--我是一条分割线-->
+								<hr>
+								<p class="text-justify">
+									主讲雅思阅读、BEC初级写作。一个偶然的机会使他赢得了人生中第一次来自于学生雷鸣般的掌声，那一 刻他感受到了英雄般的礼遇，从此便爱上了黑板前面的那片王土……在先后任教于两家海外教学机构之后， 终与“东方”在奥运之夏上演了完美的亲密接触。其严谨的教学风格迎来了学生们信任的...
+								</p>
+								<a href="#" class="btn btn-red btn-sm btn-sm-padding" title="关注导师" role="button">关注导师</a>
+
+							</figcaption>
+						</figure>
+					</header>
+					<!--/.md-subject-detail-header END-->
+
+					<div class="cp-tabpanel cp-tabpanel-detail" role="tabpanel">
+
+						<div class="row match-height">
+							<div class="col-xs-8 match-item">
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs" role="tablist" id="detailTab">
+									<li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">近期课程</a>
+									</li>
+									<li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">学员感悟</a>
+									</li>
+								</ul>
+
+								<!-- Tab panes -->
+								<div class="tab-content match-height">
+
+									<div role="tabpanel" class="tab-pane fade in active" id="tab1">
+										<!--列表-->
+										<section class="list-teacher cp-media-sm cp-border-dotted">
+
+											<figure class="media">
+												<div class="media-left">
+													<a href="teacher-detail.html">
+														<img class="media-object" src="assets/img/product/subject-list.jpg">
+													</a>
+												</div>
+
+												<figcaption class="media-body">
+													<div class="row">
+														<div class="col-xs-9">
+															<h3 class="media-heading">东方禅意茶道课程</h3>
+															<ul class="list-inline">
+																<li>主讲人：李三</li>
+																<li>时间：2015-05-12</li>
+															</ul>
+
+														</div>
+														<div class="col-xs-3">
+															<a href="teacher-detail.html" class="btn btn-red btn-sm btn-sm-padding pull-right" title="了解更多" role="button">了解更多</a>
+														</div>
+
+													</div>
+
+													<p class="text-justify">茶道与茶艺课程是茶叶生产加工技术专业必修的一门专业课 程。茶道与茶艺是茶文化的一个重要组成部分,是茶文化的核 心。
+													</p>
+												</figcaption>
+											</figure>
+
+										</section>
+										<!--/.list-subject END-->
+
+										<section class="list-teacher cp-media-sm cp-border-dotted">
+
+											<figure class="media">
+												<div class="media-left">
+													<a href="teacher-detail.html">
+														<img class="media-object" src="assets/img/product/subject-list.jpg">
+													</a>
+												</div>
+
+												<figcaption class="media-body">
+													<div class="row">
+														<div class="col-xs-9">
+															<h3 class="media-heading">东方禅意茶道课程</h3>
+															<ul class="list-inline">
+																<li>主讲人：李三</li>
+																<li>时间：2015-05-12</li>
+															</ul>
+
+														</div>
+														<div class="col-xs-3">
+															<a href="teacher-detail.html" class="btn btn-red btn-sm btn-sm-padding pull-right" title="了解更多" role="button">了解更多</a>
+														</div>
+
+													</div>
+
+													<p class="text-justify">茶道与茶艺课程是茶叶生产加工技术专业必修的一门专业课 程。茶道与茶艺是茶文化的一个重要组成部分,是茶文化的核 心。
+													</p>
+												</figcaption>
+											</figure>
+
+										</section>
+										<!--/.list-subject END-->
+
+										<section class="list-teacher cp-media-sm cp-border-dotted">
+
+											<figure class="media">
+												<div class="media-left">
+													<a href="teacher-detail.html">
+														<img class="media-object" src="assets/img/product/subject-list.jpg">
+													</a>
+												</div>
+
+												<figcaption class="media-body">
+													<div class="row">
+														<div class="col-xs-9">
+															<h3 class="media-heading">东方禅意茶道课程</h3>
+															<ul class="list-inline">
+																<li>主讲人：李三</li>
+																<li>时间：2015-05-12</li>
+															</ul>
+
+														</div>
+														<div class="col-xs-3">
+															<a href="teacher-detail.html" class="btn btn-red btn-sm btn-sm-padding pull-right" title="了解更多" role="button">了解更多</a>
+														</div>
+
+													</div>
+
+													<p class="text-justify">茶道与茶艺课程是茶叶生产加工技术专业必修的一门专业课 程。茶道与茶艺是茶文化的一个重要组成部分,是茶文化的核 心。
+													</p>
+												</figcaption>
+											</figure>
+
+										</section>
+										<!--/.list-subject END-->
+
+										<section class="list-teacher cp-media-sm cp-border-dotted">
+
+											<figure class="media">
+												<div class="media-left">
+													<a href="teacher-detail.html">
+														<img class="media-object" src="assets/img/product/subject-list.jpg">
+													</a>
+												</div>
+
+												<figcaption class="media-body">
+													<div class="row">
+														<div class="col-xs-9">
+															<h3 class="media-heading">东方禅意茶道课程</h3>
+															<ul class="list-inline">
+																<li>主讲人：李三</li>
+																<li>时间：2015-05-12</li>
+															</ul>
+
+														</div>
+														<div class="col-xs-3">
+															<a href="teacher-detail.html" class="btn btn-red btn-sm btn-sm-padding pull-right" title="了解更多" role="button">了解更多</a>
+														</div>
+
+													</div>
+
+													<p class="text-justify">茶道与茶艺课程是茶叶生产加工技术专业必修的一门专业课 程。茶道与茶艺是茶文化的一个重要组成部分,是茶文化的核 心。
+													</p>
+												</figcaption>
+											</figure>
+
+										</section>
+										<!--/.list-subject END-->
+
+										<section class="list-teacher cp-media-sm cp-border-dotted">
+
+											<figure class="media">
+												<div class="media-left">
+													<a href="teacher-detail.html">
+														<img class="media-object" src="assets/img/product/subject-list.jpg">
+													</a>
+												</div>
+
+												<figcaption class="media-body">
+													<div class="row">
+														<div class="col-xs-9">
+															<h3 class="media-heading">东方禅意茶道课程</h3>
+															<ul class="list-inline">
+																<li>主讲人：李三</li>
+																<li>时间：2015-05-12</li>
+															</ul>
+
+														</div>
+														<div class="col-xs-3">
+															<a href="teacher-detail.html" class="btn btn-red btn-sm btn-sm-padding pull-right" title="了解更多" role="button">了解更多</a>
+														</div>
+
+													</div>
+
+													<p class="text-justify">茶道与茶艺课程是茶叶生产加工技术专业必修的一门专业课 程。茶道与茶艺是茶文化的一个重要组成部分,是茶文化的核 心。
+													</p>
+												</figcaption>
+											</figure>
+
+										</section>
+										<!--/.list-subject END-->
+
+										<section class="list-teacher cp-media-sm cp-border-dotted">
+
+											<figure class="media">
+												<div class="media-left">
+													<a href="teacher-detail.html">
+														<img class="media-object" src="assets/img/product/subject-list.jpg">
+													</a>
+												</div>
+
+												<figcaption class="media-body">
+													<div class="row">
+														<div class="col-xs-9">
+															<h3 class="media-heading">东方禅意茶道课程</h3>
+															<ul class="list-inline">
+																<li>主讲人：李三</li>
+																<li>时间：2015-05-12</li>
+															</ul>
+
+														</div>
+														<div class="col-xs-3">
+															<a href="teacher-detail.html" class="btn btn-red btn-sm btn-sm-padding pull-right" title="了解更多" role="button">了解更多</a>
+														</div>
+
+													</div>
+
+													<p class="text-justify">茶道与茶艺课程是茶叶生产加工技术专业必修的一门专业课 程。茶道与茶艺是茶文化的一个重要组成部分,是茶文化的核 心。
+													</p>
+												</figcaption>
+											</figure>
+
+										</section>
+										<!--/.list-subject END-->
+									</div>
+
+									<div role="tabpanel" class="tab-pane  fade in" id="tab2">
+
+										<section class="cp-media-sm cp-border-dotted list-comment">
+											<figure class="media">
+												<div class="media-left">
+													<img class="media-object" src="assets/img/product/photo.jpg">
+												</div>
+												<figcaption class="media-body">
+													对李大海老师说的话：老师很细心，关注我们的思维是否能跟上，课堂的及时反 馈很赞，我收获许多许多。谢谢老师课上耐心解答我的疑问，心想齐老师的课上 一整天我都闲不够。
+													<span class="text-right center-block date">2015年05月21日 21:36</span>
+												</figcaption>
+
+											</figure>
+										</section>
+										<!--/.list-comment END-->
+
+										<section class="cp-media-sm cp-border-dotted list-comment">
+											<figure class="media">
+												<div class="media-left">
+													<img class="media-object" src="assets/img/product/photo.jpg">
+												</div>
+												<figcaption class="media-body">
+													对李大海老师说的话：老师很细心，关注我们的思维是否能跟上，课堂的及时反 馈很赞，我收获许多许多。谢谢老师课上耐心解答我的疑问，心想齐老师的课上 一整天我都闲不够。
+													<span class="text-right center-block date">2015年05月21日 21:36</span>
+												</figcaption>
+
+											</figure>
+										</section>
+										<!--/.list-comment END-->
+
+										<section class="cp-media-sm cp-border-dotted list-comment">
+											<figure class="media">
+												<div class="media-left">
+													<img class="media-object" src="assets/img/product/photo.jpg">
+												</div>
+												<figcaption class="media-body">
+													对李大海老师说的话：老师很细心，关注我们的思维是否能跟上，课堂的及时反 馈很赞，我收获许多许多。谢谢老师课上耐心解答我的疑问，心想齐老师的课上 一整天我都闲不够。
+													<span class="text-right center-block date">2015年05月21日 21:36</span>
+												</figcaption>
+
+											</figure>
+										</section>
+										<!--/.list-comment END-->
+
+										<section class="cp-media-sm cp-border-dotted list-comment">
+											<figure class="media">
+												<div class="media-left">
+													<img class="media-object" src="assets/img/product/photo.jpg">
+												</div>
+												<figcaption class="media-body">
+													对李大海老师说的话：老师很细心，关注我们的思维是否能跟上，课堂的及时反 馈很赞，我收获许多许多。谢谢老师课上耐心解答我的疑问，心想齐老师的课上 一整天我都闲不够。
+													<span class="text-right center-block date">2015年05月21日 21:36</span>
+												</figcaption>
+
+											</figure>
+										</section>
+										<!--/.list-comment END-->
+
+									</div>
+
+								</div>
+							</div>
+							<!--Tabs END-->
+
+							<div class="col-xs-4 match-item">
+
+								<div class="scroll-pane">
+
+									<div class="md-book-wrap">
+										<h4>出版著作</h4>
+
+										<ul class="list-unstyled list-book">
+											<li class="row match-height">
+												<div class="col-xs-4 match-item">
+													<span class="center-block date">2010年</span>
+												</div>
+												<div class="col-xs-8 match-item">
+													<figure class="text-center">
+														<img src="assets/img/product/book.jpg">
+														<figcaption>《国学与民族国家》</figcaption>
+													</figure>
+												</div>
+											</li>
+											<li class="row match-height">
+												<div class="col-xs-4 match-item">
+													<span class="center-block date">2012年</span>
+												</div>
+												<div class="col-xs-8 match-item">
+													<figure class="text-center">
+														<img src="assets/img/product/book.jpg">
+														<figcaption>《国学与民族国家》</figcaption>
+													</figure>
+												</div>
+											</li>
+											<li class="row match-height">
+												<div class="col-xs-4 match-item">
+													<span class="center-block date">2013年</span>
+												</div>
+												<div class="col-xs-8 match-item">
+													<figure class="text-center">
+														<img src="assets/img/product/book.jpg">
+														<figcaption>《国学与民族国家》</figcaption>
+													</figure>
+												</div>
+											</li>
+											<li class="row match-height">
+												<div class="col-xs-4 match-item">
+													<span class="center-block date">2010年</span>
+												</div>
+												<div class="col-xs-8 match-item">
+													<figure class="text-center">
+														<img src="assets/img/product/book.jpg">
+														<figcaption>《国学与民族国家》</figcaption>
+													</figure>
+												</div>
+											</li>
+											<li class="row match-height">
+												<div class="col-xs-4 match-item">
+													<span class="center-block date">2012年</span>
+												</div>
+												<div class="col-xs-8 match-item">
+													<figure class="text-center">
+														<img src="assets/img/product/book.jpg">
+														<figcaption>《国学与民族国家》</figcaption>
+													</figure>
+												</div>
+											</li>
+											<li class="row match-height">
+												<div class="col-xs-4 match-item">
+													<span class="center-block date">2013年</span>
+												</div>
+												<div class="col-xs-8 match-item">
+													<figure class="text-center">
+														<img src="assets/img/product/book.jpg">
+														<figcaption>《国学与民族国家》</figcaption>
+													</figure>
+												</div>
+											</li>
+										</ul>
+
+									</div>
+									<!--/.md-book-wrap END-->
+								</div>
+								<!--/.scroll-pane END-->
+							</div>
+						</div>
+
+						<!--分页-->
+						<nav class="text-center cp-pagination">
+							<!--active为选中类-->
+							<!--disabled为禁用属性-->
+							<!--当前页属于首页或者末页时，应当为"上一页"和"下一页"添加disabled禁用属性-->
+							<ul class="pagination pagination-sm">
+								<li><a href="#">页首</a>
+								</li>
+								<li>
+									<a disabled href="#" aria-label="Previous">
+										<span aria-hidden="true">上一页</span>
+									</a>
+								</li>
+								<li class="active"><a href="#">1<span class="sr-only">(current)</span></a>
+								</li>
+								<li><a href="#">2</a>
+								</li>
+								<li><a href="#">3</a>
+								</li>
+								<li><a href="#">4</a>
+								</li>
+								<li><a href="#">5</a>
+								</li>
+								<li class="ellipsis"><a href="#">&#8230;</a>
+								</li>
+								<li><a href="#">10</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Next">
+										<span aria-hidden="true">下一页</span>
+									</a>
+								</li>
+								<li><a href="#">页尾</a>
+								</li>
+								<li class="input">
+									<input class="form-control input-sm pull-left" type="text" value="">
+								</li>
+								<li class="button">
+									<button class="btn btn-default btn-sm" type="button">GO</button>
+								</li>
+
+							</ul>
+						</nav>
+
+						<!--热门课程-->
+						<footer class="cp-thumbnail cp-teacher">
+							<h4>相关导师推荐</h4>
+
+							<div class="row">
+								<div class="col-xs-span">
+									<div class="thumbnail">
+										<a href="subject-detail.html">
+											<img class="img-responsive" src="assets/img/product/teacher-recom.jpg">
+											<span class="center-block text-center teacher-name">我是谁</span>
+										</a>
+										<div class="caption">
+											<h5 class="good">擅长领域：茶道茶艺</h5>
+											<ul class="list-inline">
+												<li>从业经验：25年</li>
+												<li>人气：2635</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-span">
+									<div class="thumbnail">
+										<a href="subject-detail.html">
+											<img class="img-responsive" src="assets/img/product/teacher-recom.jpg">
+											<span class="center-block text-center teacher-name">我是谁</span>
+										</a>
+										<div class="caption">
+											<h5 class="good">擅长领域：茶道茶艺</h5>
+											<ul class="list-inline">
+												<li>从业经验：25年</li>
+												<li>人气：2635999</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-span">
+									<div class="thumbnail">
+										<a href="subject-detail.html">
+											<img class="img-responsive" src="assets/img/product/teacher-recom.jpg">
+											<span class="center-block text-center teacher-name">我是谁</span>
+										</a>
+										<div class="caption">
+											<h5 class="good">擅长领域：茶道茶艺</h5>
+											<ul class="list-inline">
+												<li>从业经验：25年</li>
+												<li>人气：2635999</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-span">
+									<div class="thumbnail">
+										<a href="subject-detail.html">
+											<img class="img-responsive" src="assets/img/product/teacher-recom.jpg">
+											<span class="center-block text-center teacher-name">我是谁</span>
+										</a>
+										<div class="caption">
+											<h5 class="good">擅长领域：茶道茶艺</h5>
+											<ul class="list-inline">
+												<li>从业经验：25年</li>
+												<li>人气：2635999</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-span">
+									<div class="thumbnail">
+										<a href="subject-detail.html">
+											<img class="img-responsive" src="assets/img/product/teacher-recom.jpg">
+											<span class="center-block text-center teacher-name">我是谁</span>
+										</a>
+										<div class="caption">
+											<h5 class="good">擅长领域：茶道茶艺</h5>
+											<ul class="list-inline">
+												<li>从业经验：25年</li>
+												<li>人气：2635999</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</footer>
+						<!--/.cp-subject end-->
+						
+					</div>
+					<!--/.cp-tabpanel end-->
+
+				</div>
+			</main>
+
+			<!--滚动条UI-->
+			<link rel="stylesheet" type="text/css" href="assets/css/jquery.jscrollpane.min.css" media="screen">
+			<script src="assets/js/jquery.mousewheel.min.js"></script>
+			<script src="assets/js/jquery.jscrollpane.min.js"></script>
+			<script src="assets/js/jquery.jscrollpane.set.js"></script>
+			<!--/.site-main end -->
+
+			<!--/*==========================▼程序猿可将以下拆分为公共脚部▼=========================*/-->
+
+			<!--/*===================▼site-footer▼==================*/-->
+			<footer class="site-footer" role="contentinfo">
+
+				<div class="brand-footer text-center">
+					<div class="container">
+						<div class="brand-content">
+							<img src="assets/img/brand.png" alt="种子网络平台|禅意东方|展示东方文化及东方美学系列课程的网络平台">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="container">
+					<ul class="list-unstyled" role="list">
+						<li role="listitem"><a href="#" title="关于我们">关于我们</a>
+						</li>
+						<li role="listitem"><a href="#" title="联系我们">联系我们</a>
+						</li>
+						<li role="listitem"><a href="#" title="链接博客">链接博客</a>
+						</li>
+						<li role="listitem"><a href="#" title="帮助中心">帮助中心</a>
+						</li>
+						<li role="listitem"><a href="#" title="意见反馈">意见反馈</a>
+						</li>
+						<li role="listitem"><a href="#" title="法律声明">法律声明</a>
+						</li>
+					</ul>
+
+					<p class="copyright">
+						深圳尊仕和科技发展有限公司&nbsp;&nbsp;&nbsp;备案号:深公网安备11010802009909号&nbsp;深ICP备12020472号-1 深ICP1101034028
+					</p>
+
+				</div>
+			</footer>
+			<!--/.footer end -->
+
+		</div>
+		<!--/.site-wrap end-->
+
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+		<script src="assets/js/jquery.viewport-size.min.js"></script>
+		<script src="assets/js/jquery.viewport-scale.min.js"></script>
+		
+		<script src="assets/js/jquery.matchHeight.min.js"></script>
+		<script src="assets/js/jquery.scrollUp.min.js"></script>
+		<script src="assets/js/site.js"></script>
+
+	</body>
+
+</html>
