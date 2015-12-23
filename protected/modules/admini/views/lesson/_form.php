@@ -222,6 +222,7 @@ $(function(){
 <link rel="stylesheet" type="text/css"
 	href="//cdn.bootcss.com/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.css" media="screen">
 <script src="//cdn.bootcss.com/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.js"></script>
+
 <script>
 $('#Lesson_start_date_time').datetimepicker({
 	lang:'zh',
