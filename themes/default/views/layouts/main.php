@@ -117,13 +117,14 @@
 											$_SERVER['REQUEST_URI'] === '/index.php?r=page/show&name=help' OR
 												$_SERVER['REQUEST_URI'] === '/index.php?r=page/show&name=law' OR
 													$_SERVER['REQUEST_URI'] === '/index.php?r=page/show&name=unionCollege' OR
-														$_SERVER['REQUEST_URI'] === '/index.php?r=customize' OR
-															$_SERVER['REQUEST_URI'] === '/index.php?r=register&userType=master' OR
-																$_SERVER['REQUEST_URI'] === '/index.php?r=register&userType=student' OR
-																	$_SERVER['REQUEST_URI'] === '/index.php?r=register&userType=host' OR
-																		$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=student' OR
-																			$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=master' OR
-																				$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=host'
+														$_SERVER['REQUEST_URI'] === '/index.php?r=page/show&name=networkPolicy' OR
+															$_SERVER['REQUEST_URI'] === '/index.php?r=customize' OR
+																$_SERVER['REQUEST_URI'] === '/index.php?r=register&userType=master' OR
+																	$_SERVER['REQUEST_URI'] === '/index.php?r=register&userType=student' OR
+																		$_SERVER['REQUEST_URI'] === '/index.php?r=register&userType=host' OR
+																			$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=student' OR
+																				$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=master' OR
+																					$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=host'
 														)):?>
 	<div class="cp-recom" role="banner">
 				<div class="container">

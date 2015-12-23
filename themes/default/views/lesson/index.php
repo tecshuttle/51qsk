@@ -96,7 +96,7 @@
                         <div class="row">
                             <div class="col-xs-9">
                                 <a class="media-heading" href="<?= Yii::app() -> createUrl('lesson/view', array('id' => $lesson -> id)); ?>">
-                                    <?= $lesson->name ?>课程
+                                    <?= $lesson->name ?>
                                 </a>
 
                                 <div class="rating-wrap">

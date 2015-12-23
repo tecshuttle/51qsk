@@ -1,11 +1,11 @@
 <!--/*==========================▼site-slides▼=========================*/-->
 <figure class="site-slides" role="banner">
     <!--为了考虑小屏用户，将这里的img换为background-image, 以便居中显示-->
-    <a href="<?php echo $this->createUrl('/lesson') ?>" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/index-03.jpg);"></a>
-    <a href="<?php echo $this->createUrl('/host/default/myplace') ?>" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/index-01.jpg);"></a>
-    <a href="<?php echo $this->createUrl('/master/default/mylesson') ?>" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/index-02.jpg);"></a>
-    <a href="#" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/index-slides-01.jpg);"></a>
-    <a href="#" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/index-slides-02.jpg);"></a>
+    <a href="<?php echo $this->createUrl('/lesson') ?>" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/1.jpg);"></a>
+    <a href="<?php echo $this->createUrl('/host/default/myplace') ?>" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/2.jpg);"></a>
+    <a href="<?php echo $this->createUrl('/master/default/mylesson') ?>" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/3.jpg);"></a>
+    <a href="#" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/4.jpg);"></a>
+    <a href="#" style="background-image: url(<?php echo $this->_theme->baseUrl ?>/assets/img/product/5.jpg);"></a>
 </figure>
 <!--/.site-banner end -->
 <script language="javascript">  

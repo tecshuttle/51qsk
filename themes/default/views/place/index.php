@@ -86,8 +86,10 @@
                         <figcaption class="media-body">
                             <div class="row">
                                 <div class="col-xs-9">
-                                    <h3 class="media-heading"><?php echo $place->name; ?></h3>
-
+									<a class="media-heading" href="<?php echo $this->createUrl('/place/view', array('id' => $place->id)) ?>">
+										<h3 class="media-heading"><?php echo $place->name; ?></h3>
+									</a>
+									
                                     <div class="rating-wrap">
                                         <?php
 
