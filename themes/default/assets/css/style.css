@@ -26,7 +26,7 @@
 /*==============================▼Bootstrap.css增强版▼==============================*/
 
 html {
-	height: 100%;	
+	height: 100%;
 	overflow: auto;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -2751,12 +2751,11 @@ hr.cp-hr-percent100 {
 	position: relative;
 	float: left;
 	display: inline-block;
-	margin-left: 17px;
+	margin-left: 18px;
 	width: 65px;
 	height: 143px;
 	line-height: 1;
 	font-family: system;
-	/*	border-left: 1px solid #4c4c4c;*/
 }
 
 .site-category h3:before {
@@ -2764,7 +2763,8 @@ hr.cp-hr-percent100 {
 	bottom: 0;
 	left: 0;
 	z-index: 9;
-	display: inline-block;
+	display: block;
+	width: 1px;
 	height: 120px;
 	content: '';
 	border-left: 1px solid #4c4c4c;
@@ -2992,7 +2992,7 @@ hr.cp-hr-percent100 {
 
 .section-index {
 	position: relative;
-	margin-left: 17px;
+	margin-left: 18px;
 	border-left: 1px solid #4c4c4c;
 }
 
@@ -3004,11 +3004,12 @@ hr.cp-hr-percent100 {
 	left: -14px;
 	top: 63px;
 	z-index: 999;
-	display: inline-block;
+	display: block;
 	content: "";
 	width: 27px;
 	height: 27px;
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIASURBVEhLvZa/SgNBEMYX/AMqKWR3k5ykE3sLG19BH8AnULQSOztJoRZqLbaCyN0lIr6AhaaU+BZWhpR2+n2TuZDEyx9F94PhcrMzv9nbnducGaXrUmkh8X41cW4n9e4c13ri7HPqbJNX3qt/h3GM19TJdWXMTFxcXE+8PYbFqbcXsXObt94vcyyL4T39HGcc45mXxYzVTRQ5APYx28vY2727pYLVoZFiHOMlD/nk6FC+6s5FXJbUuZOacyvq/pGYx3xyyFN3v+Jy2WNWZ1iKw3trC+r+lZhPDnnkqrsj2SM8OmZ0Glcqc+oWJcZMpdauIfEITdFAc7xh1u+88p5+GUecpojIER64fXsozYC1Hlw6AGYRvIVZvgD8gSKfg0Y/xyUO8ZoqIo9c8sXxEEXz7KK0aHfFoWIiZnYAYHuwwBBrM36wILnks46R9whtWy+VijpuHo2Z5kwFkA8eZm3mMV9RhlzyWcdgNtt8T3RM1Nkj+5oDG2uSh3xFichnHfmBtd1Qvwi+ah5ocrNVRYnIlwfCTGo8CdQvgq+RD5nMmK8oEfmsg2W0T71rTGl754ImMuQrSkQ+6xDcVF9XSGh9A/zMWorqSuqwYrAnC7tnIbsx6HsW9AQJejZSwU59Kuj/GRXsnzpTsG+QTMG+rjLJHrJp0EWw//tu7NXffhEb8wWDJp3UMwJa6wAAAABJRU5ErkJggg==) no-repeat scroll left top;
+	background-size: 27px 27px;
 }
 
 
@@ -3017,7 +3018,7 @@ hr.cp-hr-percent100 {
 .section-index + hr {
 	border-top: 1px solid #bbb;
 	border-left: 1px solid #4c4c4c;
-	margin: 0 0 0 17px;
+	margin: 0 0 0 18px;
 }
 
 .section-index .cp-more {
@@ -3262,9 +3263,10 @@ hr.cp-hr-percent100 {
 .section-index.section-three .description p {
 	width: 80px;
 	height: 450px;
-	font-size: 18px;
+	font-size: 16px;
 	color: #222;
 	line-height: 1.5;
+	letter-spacing: 5px;
 }
 
 .section-index.section-three .vertical-rl {
@@ -3309,7 +3311,7 @@ hr.cp-hr-percent100 {
 }
 
 .section-index.section-three .effect-item + .effect-item {
-	margin-left: 10px;
+	margin-left: 9.5px;
 }
 
 .section-index.section-three .effect-item img {
@@ -4957,3 +4959,88 @@ hr.cp-hr-percent100 {
 	margin-top: 10px;
 	font-size: 18px;
 }
+
+
+/*=====================联系我们======================*/
+
+.contact-wrap {
+	padding-left: 50px;
+}
+
+.contact-wrap .dl-contact {
+	font-size: 18px;
+	margin-bottom: 50px;
+}
+
+.contact-wrap .dl-contact .h3 {
+	margin-bottom: 15px;
+	font-size: 20px;
+}
+
+.contact-wrap .dl-contact dd {
+	margin-bottom: 5px;
+}
+
+.contact-wrap .form-horizontal {
+	width: 550px;
+}
+
+.contact-wrap .form-horizontal .form-control {
+	display: block;
+	width: 100%;
+	background-color: #e1e1e1;
+	border-radius: 0;
+}
+
+.contact-wrap .form-horizontal input.form-control{
+	height: 50px;
+	line-height: 50px;
+}
+
+.contact-wrap .form-horizontal textarea.form-control{
+	padding-top: 15px;
+}
+
+.contact-wrap .form-horizontal .form-control::-webkit-input-placeholder {
+	color: #999;
+	font-size: 18px;
+}
+
+.contact-wrap .form-horizontal .form-control:-moz-placeholder {
+	color: #999;
+	font-size: 18px;
+}
+
+.contact-wrap .form-horizontal .form-control::-moz-placeholder {
+	color: #999;
+	font-size: 18px;
+}
+
+.contact-wrap .form-horizontal .form-control:-ms-input-placeholder {
+	color: #999;
+	font-size: 18px;
+}
+
+.contact-wrap .form-horizontal button[type="submit"].btn {
+	margin-top: 0;
+	font-size: 30px;
+	background-color: #87131d;
+	border-color: #87131d;
+	border-radius: 0;
+}
+
+
+.contact-wrap .form-horizontal .form-control-static{
+	color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
