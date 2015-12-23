@@ -9,7 +9,7 @@
 </figure>
 <!--/.site-banner end -->
 <script language="javascript">  
-             location.hash="#Anchor";  
+    location.hash="#Anchor";  
 </script>
 
 <main class="site-main" role="main">
@@ -58,8 +58,86 @@
             </aside>
 
             <section class="admin-content pull-right match-item">
-                <br/> <br/>
+                <br/> <br/>                
                 <?php echo $bagecmsPage['content'] ?>
+
+					<div class="contact-wrap">
+                	
+	                	<!--联系方式-->
+	                	<dl class="dl-contact">
+	                		<dt class="h3">
+	                			<b>善种缘</b>
+	                		</dt>
+	                		<dd>这里是地址</dd>
+	                		<dd>电话：0755-xxxxxx</dd>
+	                		<dd>邮箱：xx@gmail.com</dd>
+	                	</dl>
+	                	
+	                	<!--表单-->      
+	                	<h4>您可以随时通过电话与邮件和我们保持联络，或把您的需求提交给我们</h4>    	
+	                	<div class="form-horizontal">
+		                			                	
+		                		<div class="form-group">
+		                			<div class="col-xs-6">
+		    							<label class="sr-only" for="name">姓名</label>
+		    							<input type="text" class="form-control" id="name" placeholder="姓名">
+			    						<p class="form-control-static">
+			    							<i class="fa fa-exclamation-circle"></i> 格式错误
+			    						</p>		
+		    								
+		  							</div>
+		  						
+		  							<div class="col-xs-6">
+		    							<label class="sr-only" for="company">公司（选填）</label>
+		    							<input type="text" class="form-control" id="company" placeholder="公司（选填）">
+		    							<p class="form-control-static">
+			    							<i class="fa fa-exclamation-circle"></i> 格式错误
+			    						</p>
+		    						</div>			
+		  						</div>
+		
+		                		<div class="form-group">
+		                			<div class="col-xs-6">
+		    							<label class="sr-only" for="cellphone-number">手机</label>
+		    							<input type="text" class="form-control" id="cellphone-number" placeholder="手机">
+			    						<p class="form-control-static">
+				    							<i class="fa fa-exclamation-circle"></i> 格式错误
+				    					</p>		
+		  						</div>
+		  						
+		  						<div class="col-xs-6">
+			    						<label class="sr-only" for="email">邮箱</label>
+			    						<input type="text" class="form-control" id="email" placeholder="邮箱">
+			    						<p class="form-control-static">
+			    							<i class="fa fa-exclamation-circle"></i> 格式错误
+			    						</p>
+		    						</div>
+		  						</div>
+		  						
+		                		<div class="form-group message-wrap">
+		                			<div class="col-xs-12">	
+			    						<label class="sr-only" for="message">留言信息</label>
+			    						<textarea class="form-control" id="message" rows="9" placeholder="留言信息"></textarea>
+			    						<p class="form-control-static">
+			    							<i class="fa fa-exclamation-circle"></i> 格式错误
+			    						</p>
+		    						</div>
+		  						</div>
+							
+		                		<div class="form-group">
+		                			<div class="col-xs-12">
+			    						<button type="submit" class="btn btn-block btn-lg btn-danger">
+			    							确认提交
+			    						</button>
+		    						</div>
+		  						</div>                 	
+	                		
+	                	</div>
+	                	<!--/.form-horizontal END-->    
+	                	
+                	</div>	
+                	<!--/.contact-wrap END-->    
+                	         	
             </section>
 
         </article>
