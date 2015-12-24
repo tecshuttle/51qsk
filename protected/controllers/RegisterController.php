@@ -132,7 +132,7 @@ class RegisterController extends XFrontBase {
 			
 				$teacherUser = Teacher::model()->countByAttributes(array('user'=>$hostModel->user));
 				$studentUser = Student::model()->countByAttributes(array('user'=>$hostModel->user));
-				echo CActiveForm::validate($hostModel);
+				//echo CActiveForm::validate($hostModel);
 				//判断账号与其他角色账号是否相同
 				if($studentUser != 0 || $teacherUser != 0){
 					Yii::app()->user->setFlash('HostUserError','您的手机号已在其他角色注册');

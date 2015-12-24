@@ -141,8 +141,8 @@
                     <div class="description clearfix">
                         <h4 class="text-center clear-m pull-right">场地租用</h4>
                         <p class="pull-left vertical-rl">
-                            书院栏目针对于需要场地的导师，
-                            <br> 机构，个人提供联系场地，确保日期行程的服务。
+                            需要预定授课场地的导师 机构 企业
+							<br/> 请点击【更多】了解详情
                         </p>
 
                     </div>
