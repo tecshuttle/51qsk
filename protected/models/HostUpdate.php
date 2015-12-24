@@ -31,7 +31,7 @@ class HostUpdate extends XBaseModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, address, email, phone, business_name, pic', 'required'),
+			array('name, address, email, phone, business_name, pic, status', 'required'),
 		);
 	}
 

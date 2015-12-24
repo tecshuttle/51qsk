@@ -14,14 +14,25 @@
                     </h3>
 
                     <div class="rating-wrap">
+						<?php
 
-                        <div class="rating-container rating-uni rating-3">
-                            <div class="rating-stars"></div>
-                        </div>
+						$rank = array(
+							'0.0' => '0', '0.5' => '0',
+							'1.0' => '1', '1.5' => '1-5',
+							'2.0' => '2', '2.5' => '2-5',
+							'3.0' => '3', '3.5' => '3-5',
+							'4.0' => '4', '4.5' => '4-5',
+							'5.0' => '5'
+						);
+						?>
 
-                        <span class="number"><b><?php echo $place->rank; ?></b>分</span>
+						<div class="rating-container rating-uni rating-<?= $rank[$place->rank] ?>">
+							<div class="rating-stars"></div>
+						</div>
 
-                    </div>
+						<span class="number"><b><?php echo $place->rank; ?></b>分</span>
+
+					</div>
 
 
                     <h5>场地简介:</h5>

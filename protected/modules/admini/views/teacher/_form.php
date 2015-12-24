@@ -27,16 +27,9 @@
 		<?php echo $form->textField($model,'name',array('size'=>30,'maxlength'=>30)); ?>
 		</td>
 	</tr>
+		
+		<?php echo $form->passwordField($model,'password',array('size'=>32,'maxlength'=>32,'hidden'=>'hidden')); ?>
 	
-	<tr>
-		<td class="tb_title">密码：</td>
-    </tr>
-    <tr >
-		<td >
-		<?php echo $form->passwordField($model,'password',array('size'=>32,'maxlength'=>32)); ?>
-		</td>
-	</tr>
-
   <tr hidden="hidden">
     <td >
 		<?php echo $form->textField($model, 'verifyPassword', array('id' => 'inputRepeatPassword')); ?>

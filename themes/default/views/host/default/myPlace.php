@@ -17,9 +17,9 @@
                         <h3 class="media-heading"><a href="#"><?php echo $place -> name; ?></a></h3>
 
                         <?php if ($place->status == 0) : ?>
-                            <span class="center-block" style="color:orange;">审核未通过</span>
+                            <span class="center-block" style="color:orange;">审核进行中...</span>
                         <?php else: ?>
-                            <span class="center-block" style="color:limegreen;">审核通过</span>
+                            <span class="center-block" style="color:limegreen;">审核已通过</span>
                         <?php endif; ?>
 
                         <span class="center-block"><?php echo $place -> address; ?></span>

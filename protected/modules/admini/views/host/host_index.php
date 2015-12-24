@@ -8,11 +8,12 @@
   <form method="post" action="<?php echo $this->createUrl('batch')?>" name="cpform" >
     <thead>
       <tr class="tb_header">
-        <th width="10%">ID</th>
-        <th width="15%">用户名</th>
-        <th width="8%">真实姓名</th>
-		<th width="5%">联系方式</th>
-		<th width="15%">邮箱</th>
+        <th width="5%">ID</th>
+        <th width="14%">企业名称</th>
+        <th width="8%">主理人姓名</th>
+		<th width="8%">联系方式</th>
+		<th width="8%">邮箱</th>
+		<th width="15%">地址</th>
 		<th width="5%">审核状态</th>
 		<th width="10%">操作</th>
       </tr>
@@ -22,10 +23,11 @@
       <td ><input type="checkbox" name="id[]" value="<?php echo $row->id?>">
         <?php echo $row->id?></td>
 
-      <td ><?php echo $row->user?></td>
+      <td ><?php echo $row->business_name?></td>
       <td><?php echo $row->name?></td>
 	  <td><?php echo $row->phone?></td>
 	  <td><?php echo $row->email?></td>
+	  <td><?php echo $row->address?></td>
 	  <td><?php 
 									switch($row->status){
 										case 1:

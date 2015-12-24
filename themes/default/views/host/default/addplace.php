@@ -149,6 +149,21 @@
 			</div>
 		</div>
 		<div class="form-group">
+			<label for="Place_catalog_id" class="col-xs-2 control-label">供餐情况：</label>
+			<div class="col-xs-6">
+				<?php
+				echo CHtml::dropDownList('Place[food]', '', array('1' => '可以供餐', '0' => '暂不供餐'),
+				array(
+				'class' => 'form-control selectpicker show-menu-arrow',
+				'data-size' => '12',
+				'title' => '请选择是否供餐',
+				'options' => array($model->food => array('selected' => true)),
+				));
+				?>
+				<?php echo $form->error($model, 'food'); ?>
+			</div>
+		</div>
+		<div class="form-group">
 			<label for="attach" class="col-xs-2 control-label">场地主页图：</label>
 			<div class="col-xs-6">
 				<input name="attach" type="file" id="attach" class="filestyle" data-buttonText="选择图片"/>

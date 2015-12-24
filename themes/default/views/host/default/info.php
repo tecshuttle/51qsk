@@ -2,9 +2,9 @@
 	<!--注意|H3有些小图标不一样-->
 	<h3>
 		<i class="fa fa-info-circle">
-		</i>个人信息
+		</i>企业信息
 	</h3>
-	<h4><div class="form-group"><?php echo Yii::app()->user->getFlash('success');?></div></h4>
+	<h4><div class="text-danger"><?php echo Yii::app()->user->getFlash('success');?></div></h4>
 	<?php if(Yii::app()->user->hasFlash('msg')){
 	?>
 	<div class="flash-success">
