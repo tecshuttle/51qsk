@@ -4052,11 +4052,18 @@ hr.cp-hr-percent100 {
 	-ms-behavior: url(backgroundsize.min.htc);
 }
 
-.md-login-register .beautify-picture:before,
-.md-login-register .beautify-picture:after {
+/*动画组件*/
+
+.md-login-register .unslider {
+	height: 455px;
+	overflow: hidden;	
+}
+
+.md-login-register .unslider:before,
+.md-login-register .unslider:after {
 	position: absolute;
 	top: 0;
-	z-index: 9;
+	z-index: 99;
 	display: block;
 	width: 400px;
 	height: 244px;
@@ -4064,18 +4071,39 @@ hr.cp-hr-percent100 {
 	background: url(../img/cloud.png) no-repeat;
 }
 
-.md-login-register .beautify-picture:before {
+.md-login-register .unslider:before {
 	right: -200px;
 }
 
-.md-login-register .beautify-picture:after {
+.md-login-register .unslider:after {
 	left: -200px;
 }
 
-.md-login-register figcaption h4,
-.md-login-register figcaption p {
-	margin: 20px 60px;
-	font-family: system;
+.md-login-register .unslider-fade {
+	position: relative;	
+	height: 455px;
+	overflow: hidden;
+}
+
+.md-login-register .unslider-fade .unslider-wrap {
+	position: relative;
+	display: block;
+	height: 455px;
+	overflow: hidden;
+}
+
+.md-login-register .unslider-fade .unslider-wrap li {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 8;
+	height: 455px;
+	opacity: 0;
+}
+
+.md-login-register .unslider-fade .unslider-wrap li.unslider-active {
+	z-index: 10
 }
 
 
@@ -4115,6 +4143,8 @@ hr.cp-hr-percent100 {
 .md-login .beautify-picture {
 	position: relative;
 	width: 100%;
+	height: 354px;
+	overflow: hidden;
 }
 
 .md-login .form-login-sns a {
@@ -4992,12 +5022,12 @@ hr.cp-hr-percent100 {
 	border-radius: 0;
 }
 
-.contact-wrap .form-horizontal input.form-control{
+.contact-wrap .form-horizontal input.form-control {
 	height: 50px;
 	line-height: 50px;
 }
 
-.contact-wrap .form-horizontal textarea.form-control{
+.contact-wrap .form-horizontal textarea.form-control {
 	padding-top: 15px;
 }
 
@@ -5029,18 +5059,6 @@ hr.cp-hr-percent100 {
 	border-radius: 0;
 }
 
-
-.contact-wrap .form-horizontal .form-control-static{
+.contact-wrap .form-horizontal .form-control-static {
 	color: red;
 }
-
-
-
-
-
-
-
-
-
-
-

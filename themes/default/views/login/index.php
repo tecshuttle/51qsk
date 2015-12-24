@@ -3,20 +3,78 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-6">
-				<!--图文介绍-->
-				<figure class="text-center">
-					<span class="center-block beautify-picture">
-						<img src="<?php echo $this->_theme->baseUrl ?>/assets/img/product/beautify-p1.png" alt="点翠">
-					</span>
-					<figcaption>
-						<h4>
-							点翠
-						</h4>
-						<p class="text-justify">
-							两千年来，中国一直在用翠鸟的蓝色羽毛作为镶嵌的 精致艺术品和装饰，从发夹，头饰，和扇子到屏风。
-						</p>
-					</figcaption>
-				</figure>
+										
+				<!--图文介绍|动画-->			
+				<div class="js-fading-slider">
+					<ul class="clearfix list-unstyled">
+						<li>
+							<figure class="text-center">
+								<img src="<?php echo $this->_theme->baseUrl ?>/assets/img/product/beautify-p1.png" alt="点翠">
+								
+								<!--描述-->
+								<figcaption>
+									<h4>点翠</h4>
+									<p class="text-justify">
+										两千年来，中国一直在用翠鸟的蓝色羽毛作为镶嵌的 精致艺术品和装饰，从发夹，头饰，和扇子到屏风。
+									</p>
+								</figcaption>
+							</figure>																						
+						</li>
+						<li>
+							<figure class="text-center">
+								<img src="<?php echo $this->_theme->baseUrl ?>/assets/img/product/beautify-p2.png" alt="烧蓝">
+								
+								<!--描述-->
+								<figcaption>
+			                        <h4>烧蓝</h4>
+			                        <p class="text-justify">烧蓝作为中国古代金银器的一种，传世的实物并不很多， 主要原因是黄金和白银均属稀有贵金属，又都具有很高 的经济价值，绝大多数为皇宫所用。作为宫廷陈设用品， 体现出封建皇帝的尊贵地位。
+			                        </p>
+			                    </figcaption>
+							</figure>	
+						</li>
+						<li>
+							<figure class="text-center">
+								<img src="<?php echo $this->_theme->baseUrl ?>/assets/img/product/beautify-p1.png" alt="点翠">
+								
+								<!--描述-->
+								<figcaption>
+									<h4>点翠</h4>
+									<p class="text-justify">
+										两千年来，中国一直在用翠鸟的蓝色羽毛作为镶嵌的 精致艺术品和装饰，从发夹，头饰，和扇子到屏风。
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure class="text-center">
+								<img src="<?php echo $this->_theme->baseUrl ?>/assets/img/product/beautify-p2.png" alt="烧蓝">
+								
+								<!--描述-->
+								<figcaption>
+			                        <h4>烧蓝</h4>
+			                        <p class="text-justify">烧蓝作为中国古代金银器的一种，传世的实物并不很多， 主要原因是黄金和白银均属稀有贵金属，又都具有很高 的经济价值，绝大多数为皇宫所用。作为宫廷陈设用品， 体现出封建皇帝的尊贵地位。
+			                        </p>
+			                    </figcaption>
+							</figure>
+						</li>								
+					</ul>
+				</div>
+				<!--/.js-fading-slider END-->
+														
+				<script src="<?php echo $this->_theme->baseUrl ?>/assets/js/unslider-min.js"></script>
+				<script>
+					jQuery(document).ready(function($) {
+						$('.js-fading-slider').unslider({
+							animation: 'fade',
+							autoplay: true,
+							arrows: false,
+							nav: false,
+							delay: 5000,
+							speed: 300
+						});
+					});
+				</script>					
+
 			</div>
 			<div class="col-xs-6">
 				<div class="cp-tab-login-reg-wrap">
