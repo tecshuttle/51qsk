@@ -22,7 +22,7 @@ class InfoController extends XUserBase
 		if (isset($_POST['StudentUpdate'])) {
             $studentInfo->attributes = $_POST['StudentUpdate'];
 			
-			$file = XUpload::upload($_FILES['attach'], array('thumb' => true, 'thumbSize' => array(430, 320)));
+			$file = XUpload::upload($_FILES['attach']);
 				
 				if (is_array($file)) {
 					$studentInfo->pic = $file['pathname'];

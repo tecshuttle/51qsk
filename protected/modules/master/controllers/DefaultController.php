@@ -156,7 +156,7 @@ class DefaultController extends XUserBase
             $model->attributes = $_POST['Lesson'];
             $model->teacher_id = $this->_user['masterId'];
 
-			$file = XUpload::upload($_FILES['attach'], array('thumb' => true, 'thumbSize' => array(428, 320)));
+			$file = XUpload::upload($_FILES['attach']);
 			
 				if (is_array($file)) {
 					$model->pic = $file['pathname'];
@@ -190,7 +190,7 @@ class DefaultController extends XUserBase
         if (isset($_POST['Lesson'])) {
             $model->attributes = $_POST['Lesson'];
 			
-            $file = XUpload::upload($_FILES['attach'], array('thumb' => true, 'thumbSize' => array(428, 320)));
+            $file = XUpload::upload($_FILES['attach']);
 
             if (is_array($file)) {
                 $model->pic = $file['pathname'];
@@ -302,7 +302,7 @@ class DefaultController extends XUserBase
             $model->teacher_id = $this->_user['masterId'];
 
             if ($model->validate()) {
-                $file = XUpload::upload($_FILES['attach'], array('thumb' => true, 'thumbSize' => array(141, 202)));
+                $file = XUpload::upload($_FILES['attach']);
                 if (is_array($file)) {
                     $model->pic = $file['pathname'];
                     @unlink($_POST['oAttach']);

@@ -20,7 +20,7 @@ class PlaceRecommendController extends XAdminiBase
         parent::_acl();
         $model = new Place();
         $criteria = new CDbCriteria();
-        $criteria->order = 't.id ASC';
+        $criteria->order = 't.id DESC';
 		$criteria->addCondition('t.recommendation = :recommendation');
 		$criteria->params[':recommendation'] = 1;
         //$criteria->with = array ( 'catalog' );
