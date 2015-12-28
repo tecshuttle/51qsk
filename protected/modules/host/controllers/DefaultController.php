@@ -170,11 +170,25 @@ class DefaultController extends XUserBase
 
             if (is_array($file)) {
                 $model->pic = $file['paththumbname'];
+				
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
+			
+			$head = XUpload::upload($_FILES['head_portrait'], array('thumb' => true, 'thumbSize' => array(300, 200)));
 
-            if ($model->validate() AND $model->save()) {
+            if (is_array($head)) {
+                $model->head_portrait = $head['paththumbname'];
+				
+                @unlink($_POST['oAttach']);
+                @unlink($_POST['oThumb']);
+            }
+   
+   
+
+            
+			
+			if ($model->validate() AND $model->save()) {
 				$cookie = new CHttpCookie('userName', $model->name);
                 Yii::app()->request->cookies['userName'] = $cookie;
 				

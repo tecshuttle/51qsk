@@ -33,6 +33,20 @@
 			</div>
 		</div>
 			<div class="form-group">
+				<label for="attach" class="col-xs-2 control-label"><span style="color:red">*</span>头像上传：</label>
+					<div class="col-xs-6">
+						<input name="head_portrait" type="file" id="attach" class="filestyle" data-buttonText="上传"/>
+						<?php if ($model->head_portrait): ?>
+							<a class="attach-preview" href="<?php echo $this->_baseUrl . '/' . $model->head_portrait ?>" target="_blank">
+								<img src="<?php echo $this->_baseUrl . '/' . $model->head_portrait ?>" width="100" align="absmiddle"/>
+							</a>
+						<?php endif ?>
+						<p class="help-block">大小勿超过<?php $conf = Config::get('', 'base');
+							echo $conf['upload_max_size'] ?>K,格式限为jpg，bmp的图片<br/>(此处需上传企业经营许可营业执照等)</p>
+						<?php echo $form->error($model, 'head_portrait'); ?>
+					</div>
+			</div>
+			<div class="form-group">
 				<label for="HostUpdate_business_name" class="col-xs-2 control-label"><span style="color:red">*</span>企业名称：</label>
 				<div class="col-xs-6">
 					<?php echo $form -> textField($model, 'business_name', array('class' => 'form-control')); ?>
