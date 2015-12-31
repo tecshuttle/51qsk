@@ -83,21 +83,21 @@ class DefaultController extends XUserBase
             $model->host_id = $this->_user['hostId'];
 			$model->pic_other = $imageListSerialize['dataSerialize'];
 
-            $file = XUpload::upload($_FILES['attach'], array('thumb' => true, 'thumbSize' => array(192, 470)));
-			$adr = XUpload::upload($_FILES['pic_adr'], array('thumb' => true, 'thumbSize' => array(498, 364)));
-	
+            $file = XUpload::upload($_FILES['attach']);
+			$adr = XUpload::upload($_FILES['pic_adr']);
+			
             if (is_array($file)) {
-                $model->pic = $file['paththumbname'];
+                $model->pic = $file['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
 			
-			if ($model->pic == null){
-					Yii::app()->user->setFlash('picMessage','主页图不能为空');
-				}
+			// if ($model->pic == null){
+					// Yii::app()->user->setFlash('picMessage','主页图不能为空');
+				// }
 				
 			if (is_array($adr)) {
-                $model->pic_adr = $adr['paththumbname'];
+                $model->pic_adr = $adr['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
@@ -125,17 +125,16 @@ class DefaultController extends XUserBase
         if (isset($_POST['Place'])) {
             $model->attributes = $_POST['Place'];
 			$model->pic_other = $imageListSerialize['dataSerialize'];
-
-            $file = XUpload::upload($_FILES['attach'], array('thumb' => true, 'thumbSize' => array(192, 470)));
-			$adr = XUpload::upload($_FILES['pic_adr'], array('thumb' => true, 'thumbSize' => array(498, 364)));
-	
+            $file = XUpload::upload($_FILES['attach']);
+			$adr = XUpload::upload($_FILES['pic_adr']);
+			
             if (is_array($file)) {
-                $model->pic = $file['paththumbname'];
+                $model->pic = $file['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
 			if (is_array($adr)) {
-                $model->pic_adr = $adr['paththumbname'];
+                $model->pic_adr = $adr['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
@@ -166,16 +165,14 @@ class DefaultController extends XUserBase
 		if (isset($_POST['HostUpdate'])) {
             $model->attributes = $_POST['HostUpdate'];
 
-            $file = XUpload::upload($_FILES['attach'], array('thumb' => true, 'thumbSize' => array(300, 200)));
-
+            $file = XUpload::upload($_FILES['attach']);
+			
             if (is_array($file)) {
-                $model->pic = $file['paththumbname'];
-				
+                $model->pic = $file['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
-			
-			$head = XUpload::upload($_FILES['head_portrait'], array('thumb' => true, 'thumbSize' => array(300, 200)));
+			$head = XUpload::upload($_FILES['head_portrait']);
 
             if (is_array($head)) {
                 $model->head_portrait = $head['paththumbname'];

@@ -163,6 +163,7 @@
 				<?php echo $form->error($model, 'food'); ?>
 			</div>
 		</div>
+		<!--
 		<div class="form-group">
 			<label for="attach" class="col-xs-2 control-label">场地主页图：</label>
 			<div class="col-xs-6">
@@ -185,6 +186,7 @@
 						}?>
 			</div>
 		</div>
+		-->
 		<div class="form-group">
 			<label for="pic_adr" class="col-xs-2 control-label">场地主图：</label>
 			<div class="col-xs-6">

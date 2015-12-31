@@ -21,7 +21,7 @@ class LessonRecommendController extends XAdminiBase
         parent::_acl();
         $model = new Lesson();
         $criteria = new CDbCriteria();
-        $criteria->order = 't.id ASC';
+        $criteria->order = 't.id DESC';
 		$criteria->addCondition('check_status = :check_status');
 		$criteria->params[':check_status']=1;
         //$criteria->with = array ( 'catalog' );

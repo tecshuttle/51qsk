@@ -63,12 +63,7 @@
   <tr >
     <td ><?php echo $form->textField($model,'summary',array('size'=>60,'maxlength'=>255)); ?></td>
   </tr>
-  <tr>
-    <td class="tb_title">详情：</td>
-  </tr>
-  <tr >
-    <td ><?php echo $form->textArea($model,'intro',array('rows'=>6, 'cols'=>50)); ?></td>
-  </tr>
+ 
    <tr>
     <td class="tb_title">性别限制：</td>
   </tr>
@@ -111,7 +106,7 @@
   <tr >
     <td ><?php echo $form->textField($model,'address',array('size'=>60,'maxlength'=>100)); ?></td>
   </tr>
-  <tr>
+  <!--<tr>
     <td class="tb_title">主页图片：</td>
   </tr>
   <tr >
@@ -126,7 +121,7 @@
                     echo $conf['upload_max_size'] ?>K,规格限为192*470,格式限为jpg，bmp</p>
                 <?php echo $form->error($model, 'pic'); ?>
 	</td>
-  </tr>
+  </tr>-->
   <tr>
     <td class="tb_title">场地主图：</td>
   </tr>
@@ -170,6 +165,16 @@
   </tr>
   <tr >
     <td ><?php echo $form->dropDownList($model,'status',array('0'=>'未通过','1'=>'通过')); ?></td>
+  </tr>
+   
+    <tr>
+    <td class="tb_title">详情：</td>
+  </tr>
+  <tr >
+    <td >
+		<?php echo $form->textArea($model, 'intro', array('rows' => 10)); ?>
+		<?php $this->widget('application.widget.kindeditor.KindEditor', array('target' => array('#Place_intro' => array('uploadJson' => $this->createUrl('upload'))))); ?>
+	</td>
   </tr>
    <tr class="submit">
       <td > <input name="submit" type="submit" id="submit" value="提交" class="button" /></td>

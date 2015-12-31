@@ -60,84 +60,81 @@
             <section class="admin-content pull-right match-item">
                 <br/> <br/>                
                 <?php echo $bagecmsPage['content'] ?>
-
-					<div class="contact-wrap">
-                	
-	                	<!--联系方式-->
-	                	<dl class="dl-contact">
-	                		<dt class="h3">
-	                			<b>善种缘</b>
-	                		</dt>
-	                		<dd>这里是地址</dd>
-	                		<dd>电话：0755-xxxxxx</dd>
-	                		<dd>邮箱：xx@gmail.com</dd>
-	                	</dl>
-	                	
-	                	<!--表单-->      
-	                	<h4>您可以随时通过电话与邮件和我们保持联络，或把您的需求提交给我们</h4>    	
-	                	<div class="form-horizontal">
-		                			                	
-		                		<div class="form-group">
-		                			<div class="col-xs-6">
-		    							<label class="sr-only" for="name">姓名</label>
-		    							<input type="text" class="form-control" id="name" placeholder="姓名">
-			    						<p class="form-control-static">
-			    							<i class="fa fa-exclamation-circle"></i> 格式错误
-			    						</p>		
-		    								
-		  							</div>
-		  						
-		  							<div class="col-xs-6">
-		    							<label class="sr-only" for="company">公司（选填）</label>
-		    							<input type="text" class="form-control" id="company" placeholder="公司（选填）">
-		    							<p class="form-control-static">
-			    							<i class="fa fa-exclamation-circle"></i> 格式错误
-			    						</p>
-		    						</div>			
-		  						</div>
-		
-		                		<div class="form-group">
-		                			<div class="col-xs-6">
-		    							<label class="sr-only" for="cellphone-number">手机</label>
-		    							<input type="text" class="form-control" id="cellphone-number" placeholder="手机">
-			    						<p class="form-control-static">
-				    							<i class="fa fa-exclamation-circle"></i> 格式错误
-				    					</p>		
-		  						</div>
-		  						
-		  						<div class="col-xs-6">
-			    						<label class="sr-only" for="email">邮箱</label>
-			    						<input type="text" class="form-control" id="email" placeholder="邮箱">
-			    						<p class="form-control-static">
-			    							<i class="fa fa-exclamation-circle"></i> 格式错误
-			    						</p>
-		    						</div>
-		  						</div>
-		  						
-		                		<div class="form-group message-wrap">
-		                			<div class="col-xs-12">	
-			    						<label class="sr-only" for="message">留言信息</label>
-			    						<textarea class="form-control" id="message" rows="9" placeholder="留言信息"></textarea>
-			    						<p class="form-control-static">
-			    							<i class="fa fa-exclamation-circle"></i> 格式错误
-			    						</p>
-		    						</div>
-		  						</div>
+				<?php if(Yii::app()->request->getParam('name') === 'contact'):?>
+				<div class="contact-wrap">
+					<div class="col-xs-offset-2 col-xs-9">
+						<h4 class="text-danger text-right">
+						   <?php
+							$success = Yii::app()->user->getFlash('success');
+							if($success != null){
+								echo '<i class="fa fa-exclamation-circle"></i>'.$success;
+							}?>
+					   </h4>
+					</div>
+					<?php $form = $this->beginWidget('CActiveForm', array(
+						'id' => 'contact-form',
+						'htmlOptions' => array('class' => 'form-horizontal')
+						)); ?>
+						<div class="form-group">
+							<div class="col-xs-6">
+								<label class="sr-only" for="name"><span style="color:red">*</span>姓名</label>
+								<?php echo $form->textField($contactModel, 'name', array('class' => 'form-control', 'placeholder' => '姓名')); ?>
+								<p class="form-control-static">
+                                    <?php echo $form->error($contactModel, 'name'); ?>
+								</p>		
+									
+							</div>
 							
-		                		<div class="form-group">
-		                			<div class="col-xs-12">
-			    						<button type="submit" class="btn btn-block btn-lg btn-danger">
-			    							确认提交
-			    						</button>
-		    						</div>
-		  						</div>                 	
-	                		
-	                	</div>
-	                	<!--/.form-horizontal END-->    
+							<div class="col-xs-6">
+								<label class="sr-only" for="company">公司（选填）</label>
+								<?php echo $form->textField($contactModel, 'company', array('class' => 'form-control', 'placeholder' => '公司（选填）')); ?>
+								<p class="form-control-static">
+                                    <?php echo $form->error($contactModel, 'company'); ?>
+								</p>		
+									
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-6">
+								<label class="sr-only" for="cellphone"><span style="color:red">*</span>手机</label>
+								<?php echo $form->textField($contactModel, 'cellphone', array('class' => 'form-control', 'placeholder' => '手机')); ?>
+								<p class="form-control-static">
+                                    <?php echo $form->error($contactModel, 'cellphone'); ?>
+								</p>		
+									
+							</div>
+							<div class="col-xs-6">
+								<label class="sr-only" for="email"><span style="color:red">*</span>邮箱</label>
+								<?php echo $form->textField($contactModel, 'email', array('class' => 'form-control', 'placeholder' => '邮箱')); ?>
+								<p class="form-control-static">
+                                    <?php echo $form->error($contactModel, 'email'); ?>
+								</p>		
+							</div>
+						</div>
+						
+						<div class="form-group message-wrap">
+							<div class="col-xs-12">
+								<label class="sr-only" for="message"><span style="color:red">*</span>留言信息</label>
+								<?php echo $form->textarea($contactModel, 'message', array('rows' => 9, 'class' => 'form-control', 'placeholder' => '留言信息')); ?>
+								<p class="form-control-static">
+                                    <?php echo $form->error($contactModel, 'message'); ?>
+								</p>		
+							</div>
+						</div>
+					
+						<div class="form-group">
+							<div class="col-xs-12">
+								<button type="submit" class="btn btn-block btn-lg btn-danger">
+									确认提交
+								</button>
+							</div>
+						</div>     
+					<!--/.form-horizontal END-->    
 	                	
-                	</div>	
-                	<!--/.contact-wrap END-->    
-                	         	
+                </div>
+				<?php $this->endWidget(); ?>
+				<?php endif; ?>
             </section>
 
         </article>
