@@ -25,42 +25,42 @@
                 <th width="120" scope="row">所在城市：</th>
                 <td>
                     <ul class="list-unstyled clearfix">
-        <!--active为选中类-->
-        <li<?php echo $city === "" ? " class='active'" : "" ?>>
-            <a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => ''))); ?>">全部</a>
-        </li>
-        <li<?php echo $city === "110100" ? " class='active'" : "" ?>>
-            <a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => '1'))); ?>">北京</a>
-        </li>
-        <li<?php echo $city === "310100" ? " class='active'" : "" ?>>
-            <a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => '2'))); ?>">上海</a>
-        </li>
-        <li<?php echo $city === "440100" ? " class='active'" : "" ?>>
-            <a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => '4'))); ?>">广州</a>
-        </li>
-        <li<?php echo $city === "131182" ? " class='active'" : "" ?>>
-            <a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => '3'))); ?>">深圳</a>
-        </li>
+						<!--active为选中类-->
+						<li<?php echo $city === "" ? " class='active'" : "" ?>>
+							<a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => ''))); ?>">全部</a>
+						</li>
+						<li<?php echo $city === "110100" ? " class='active'" : "" ?>>
+							<a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => '1'))); ?>">北京</a>
+						</li>
+						<li<?php echo $city === "310100" ? " class='active'" : "" ?>>
+							<a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => '2'))); ?>">上海</a>
+						</li>
+						<li<?php echo $city === "440100" ? " class='active'" : "" ?>>
+							<a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => '4'))); ?>">广州</a>
+						</li>
+						<li<?php echo $city === "131182" ? " class='active'" : "" ?>>
+							<a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('city' => '3'))); ?>">深圳</a>
+						</li>
                     </ul>
                 </td>
             </tr>
-            <tr>
+            <!--<tr>
                 <th width="120" scope="row">性别限制：</th>
                 <td>
                     <ul class="list-unstyled clearfix">
-        <li<?php echo $sex === "0" ? " class='active'" : "" ?>>
-            <a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('sex' => '2'))); ?>">全部</a>
-        </li>
-        <li<?php echo $sex === "2" ? " class='active'" : "" ?>>
-            <a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('sex' => '1'))); ?>">男</a></li>
-        <li<?php echo $sex === "1" ? " class='active'" : "" ?>>
-            <a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('sex' => '0'))); ?>">女</a></li>
-        <li<?php echo $sex === "3" ? " class='active'" : "" ?>>
-            <a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('sex' => '3'))); ?>">儿童</a>
-        </li>
+						<li<?php echo $sex === "0" ? " class='active'" : "" ?>>
+							<a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('sex' => '2'))); ?>">全部</a>
+						</li>
+						<li<?php echo $sex === "2" ? " class='active'" : "" ?>>
+							<a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('sex' => '1'))); ?>">男</a></li>
+						<li<?php echo $sex === "1" ? " class='active'" : "" ?>>
+							<a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('sex' => '0'))); ?>">女</a></li>
+						<li<?php echo $sex === "3" ? " class='active'" : "" ?>>
+							<a href="<?php echo Yii::app() -> createUrl('lesson', array_merge($_GET, array('sex' => '3'))); ?>">儿童</a>
+						</li>
                     </ul>
                 </td>
-            </tr>
+            </tr>-->
         </tbody>
     </table>
 </header>

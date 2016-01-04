@@ -22,7 +22,7 @@ class LessonController extends XAdminiBase
         $model = new Lesson();
         $criteria = new CDbCriteria();
         $criteria->condition = $condition;
-        $criteria->order = 't.id ASC';
+        $criteria->order = 't.id DESC';
         //$criteria->with = array ( 'catalog' );
         $count = $model->count( $criteria );
         $pages = new CPagination( $count );
@@ -62,12 +62,28 @@ class LessonController extends XAdminiBase
      */
     public function actionUpdate( $id ) {
         parent::_acl();
+		$time = 1;
         $model = parent::_dataLoad( new Lesson(), $id );
         
         if ( isset( $_POST['Lesson'] ) ) {
 			$acl = $this->_gets->getPost( 'acl' );
             $model->attributes = $_POST['Lesson'];
 			$model->check_status = $_POST['Lesson']['check_status'];
+			
+		
+			
+			$starttime = $model->start_date_time;
+			
+			$endtime = $model->end_date_time;
+			
+
+			
+			
+			if($starttime >= $endtime){
+				$time = 0;
+			}
+			
+			
 			
 			$file = XUpload::upload($_FILES['attach']);
 			
@@ -78,7 +94,7 @@ class LessonController extends XAdminiBase
             }
 			
 			//echo CActiveForm::validate($model);exit;
-            if ( $model->validate() && $model->save() ) {
+            if ( $model->validate() && $model->save() && $time = 1) {
                 AdminLogger::_create( array ( 'catalog' => 'update' , 'intro' => '编辑内容,ID:' . $id ) ); 
                 $this->redirect( array ( 'index' ) );
             }

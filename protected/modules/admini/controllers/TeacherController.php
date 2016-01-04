@@ -22,7 +22,7 @@ class TeacherController extends XAdminiBase
         $model = new Teacher();
         $criteria = new CDbCriteria();
         $criteria->condition = $condition;
-        $criteria->order = 't.id ASC';
+        $criteria->order = 't.id DESC';
         //$criteria->with = array ( 'catalog' );
         $count = $model->count( $criteria );
         $pages = new CPagination( $count );
@@ -83,12 +83,12 @@ class TeacherController extends XAdminiBase
                     @unlink($_POST['oThumb']);
                 }
 				
-           if ($model->validate()) {
-            if ( $model->save() ) {
-                AdminLogger::_create( array ( 'catalog' => 'update' , 'intro' => '编辑内容,ID:' . $id ) ); 
-                $this->redirect( array ( 'index' ) );
-            }
-        }
+			if ($model->validate()) {
+				if ( $model->save() ) {
+					AdminLogger::_create( array ( 'catalog' => 'update' , 'intro' => '编辑内容,ID:' . $id ) ); 
+					$this->redirect( array ( 'index' ) );
+				}
+			}
 		}
        
         $this->render( 'teacher_update', array ( 'model' => $model) );

@@ -22,7 +22,7 @@ class HostController extends XAdminiBase
         $model = new Host();
         $criteria = new CDbCriteria();
         $criteria->condition = $condition;
-        $criteria->order = 't.id ASC';
+        $criteria->order = 't.id DESC';
         //$criteria->with = array ( 'catalog' );
         $count = $model->count( $criteria );
         $pages = new CPagination( $count );
@@ -62,16 +62,28 @@ class HostController extends XAdminiBase
      */
     public function actionUpdate( $id ) {
         parent::_acl();
-        $model = parent::_dataLoad( new Host(), $id );
-        
-        if ( isset( $_POST['Host'] ) ) {
+        $model = parent::_dataLoad( new HostUpdate(), $id );
+		
+        if ( isset( $_POST['HostUpdate'] ) ) {
 			$acl = $this->_gets->getPost( 'acl' );
-            $model->attributes = $_POST['Host'];
-           
-            if ( $model->save() ) {
-                AdminLogger::_create( array ( 'catalog' => 'update' , 'intro' => '编辑内容,ID:' . $id ) ); 
-                $this->redirect( array ( 'index' ) );
+			$model->attributes = $_POST['HostUpdate'];
+			
+			$data = $_POST['HostUpdate'];
+			$model->email = $data['email'];
+			
+			$file = XUpload::upload($_FILES['attach']);
+			
+            if (is_array($file)) {
+                $model->pic = $file['pathname'];
+                @unlink($_POST['oAttach']);
+                @unlink($_POST['oThumb']);
             }
+			if ($model->validate()) {
+				if ( $model->save() ) {
+					AdminLogger::_create( array ( 'catalog' => 'update' , 'intro' => '编辑内容,ID:' . $id ) ); 
+					$this->redirect( array ( 'index' ) );
+				}
+			}
         }
        
         $this->render( 'host_update', array ( 'model' => $model) );

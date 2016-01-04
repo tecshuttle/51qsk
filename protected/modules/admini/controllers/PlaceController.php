@@ -22,7 +22,7 @@ class PlaceController extends XAdminiBase
         $model = new Place();
         $criteria = new CDbCriteria();
         $criteria->condition = $condition;
-        $criteria->order = 't.id ASC';
+        $criteria->order = 't.id DESC';
         //$criteria->with = array ( 'catalog' );
         $count = $model->count( $criteria );
         $pages = new CPagination( $count );
@@ -73,6 +73,9 @@ class PlaceController extends XAdminiBase
         if ( isset( $_POST['Place'] ) ) {
             $model->attributes = $_POST['Place'];
 			$model->pic_other = $imageListSerialize['dataSerialize'];
+			
+			$data = $_POST['Place'];
+			$model->rank = $data['rank'];
 			
 			$file = XUpload::upload($_FILES['attach']);
 				$adr = XUpload::upload($_FILES['pic_adr']);

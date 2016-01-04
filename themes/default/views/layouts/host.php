@@ -9,7 +9,7 @@
                     <header class="admin-header">
                         <figure>
                             <?php $user = Host::Model()->findByPk($this->_user['hostId']); ?>
-                            <img class="img-responsive" src="<?= $user->pic ?>">
+                            <img class="img-responsive" src="<?= $user->head_portrait ?>">
                             <figcaption>
                                 <span class="center-block"><?= $user->name ?></span>
                             </figcaption>

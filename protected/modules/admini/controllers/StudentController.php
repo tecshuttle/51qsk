@@ -22,7 +22,7 @@ class StudentController extends XAdminiBase
         $model = new Student();
         $criteria = new CDbCriteria();
         $criteria->condition = $condition;
-        $criteria->order = 't.id ASC';
+        $criteria->order = 't.id DESC';
         //$criteria->with = array ( 'catalog' );
         $count = $model->count( $criteria );
         $pages = new CPagination( $count );

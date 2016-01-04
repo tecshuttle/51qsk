@@ -18,15 +18,8 @@
 		<?php echo $form->textField($model,'user',array('size'=>50,'maxlength'=>50)); ?>
 	</td>
   </tr>
-  <tr>
-    <td class="tb_title">密码：</td>
-  </tr>
-  <tr >
-    <td >
-		<?php echo $form->passwordField($model,'password',array('size'=>32,'maxlength'=>32)); ?>
-		
-	</td>
-  </tr>  
+	
+	<?php echo $form->passwordField($model,'password',array('size'=>32,'maxlength'=>32,'hidden'=>'hidden')); ?>
 
   <tr>
     <td class="tb_title">真实姓名：</td>

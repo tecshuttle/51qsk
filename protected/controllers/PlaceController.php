@@ -24,7 +24,7 @@ class PlaceController extends XFrontBase
         $criteria->addCondition('status = 1');
 
         //分页类
-        $criteria->order = 'id ASC';
+        $criteria->order = 'id DESC';
         $count = Place::model()->count($criteria); //count() 函数计算数组中的单元数目或对象中的属性个数。
         $pager = new CPagination($count);
         $pager->pageSize = 5; //每页显示的行数
