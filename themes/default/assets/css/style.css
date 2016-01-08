@@ -26,8 +26,6 @@
 /*==============================▼Bootstrap.css增强版▼==============================*/
 
 html {
-	width: 100%;
-	width: 100vw;
 	height: 100%;
 	overflow: auto;
 	overflow-x: hidden;
@@ -37,8 +35,6 @@ html {
 }
 
 body {
-	width: 100%;
-	width: 100vw;	
 	font-family: 'Microsoft YaHei', FreeSans, Arimo, 'Droid Sans', 'wenquanyi micro hei', 'Hiragino Sans GB', 'Hiragino Sans GB W3', Arial, sans-serif, "\5b8b\4f53";
 	font-size: 14px;
 	color: #000;
@@ -4076,8 +4072,7 @@ hr.cp-hr-percent100 {
 }
 
 .md-login-register .unslider:before {
-	top: 45px;
-	right: -165px;
+	right: -200px;
 }
 
 .md-login-register .unslider:after {

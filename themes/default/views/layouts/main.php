@@ -96,7 +96,7 @@
                     <div class="text-center pull-right top-info">
                         <?php if ($this->_cookiesGet('userName') == '') { ?>
                             <a href="<?php echo $this->createUrl('/login') ?>">登录</a>
-							<a href="<?php echo $this->createUrl('/register') ?>">注册</a>
+			<a href="<?php echo $this->createUrl('/register') ?>">注册</a>
                         <?php } else { ?>
                             <a href="<?php echo $this->createUrl('/' . $this->_cookiesGet('userType')) ?>"><?= $this -> _cookiesGet('userName'); ?>
                                 </a>
@@ -126,9 +126,8 @@
 																		$_SERVER['REQUEST_URI'] === '/index.php?r=register&userType=host' OR
 																			$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=student' OR
 																				$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=master' OR
-																					$_SERVER['REQUEST_URI'] === '/index.php?r=host/default/Info' OR
-																						$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=host'
-															)):?>
+																					$_SERVER['REQUEST_URI'] === '/index.php?r=login&userType=host'
+														)):?>
 	<div class="cp-recom" role="banner">
 				<div class="container">
 

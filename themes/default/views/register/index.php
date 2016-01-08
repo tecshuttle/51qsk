@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xs-6">
 
-               	<!--图文介绍|动画-->			
+               				<!--图文介绍|动画-->			
 				<div class="js-fading-slider">
 					<ul class="clearfix list-unstyled">
 						<li>

@@ -33,9 +33,9 @@
 			</div>
 		</div>
 			<div class="form-group">
-				<label for="attach" class="col-xs-2 control-label"><span style="color:red">*</span>头像上传：</label>
+				<label for="head_portrait" class="col-xs-2 control-label"><span style="color:red">*</span>头像上传：</label>
 					<div class="col-xs-6">
-						<input name="head_portrait" type="file" id="attach" class="filestyle" data-buttonText="上传"/>
+						<input name="head_portrait" type="file" id="head_portrait" class="filestyle" data-buttonText="上传"/>
 						<?php if ($model->head_portrait): ?>
 							<a class="attach-preview" href="<?php echo $this->_baseUrl . '/' . $model->head_portrait ?>" target="_blank">
 								<img src="<?php echo $this->_baseUrl . '/' . $model->head_portrait ?>" width="100" align="absmiddle"/>
