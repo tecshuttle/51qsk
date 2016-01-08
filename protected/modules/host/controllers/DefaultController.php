@@ -125,6 +125,7 @@ class DefaultController extends XUserBase
         if (isset($_POST['Place'])) {
             $model->attributes = $_POST['Place'];
 			$model->pic_other = $imageListSerialize['dataSerialize'];
+
             $file = XUpload::upload($_FILES['attach']);
 			$adr = XUpload::upload($_FILES['pic_adr']);
 			
@@ -172,20 +173,17 @@ class DefaultController extends XUserBase
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
+			
 			$head = XUpload::upload($_FILES['head_portrait']);
 
             if (is_array($head)) {
-                $model->head_portrait = $head['paththumbname'];
+                $model->head_portrait = $head['pathname'];
 				
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
-   
-   
 
-            
-			
-			if ($model->validate() AND $model->save()) {
+            if ($model->validate() AND $model->save()) {
 				$cookie = new CHttpCookie('userName', $model->name);
                 Yii::app()->request->cookies['userName'] = $cookie;
 				

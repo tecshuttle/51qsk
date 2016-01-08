@@ -219,12 +219,15 @@
 
 </section>
 <!--/.Admin-content END-->
-
-<!--图片上传扩展-->
+<!--下拉选择UI|日期选择UI|占位符扩展|图片上传扩展|富文本编辑器扩展-->
+<link rel="stylesheet" type="text/css" href="<?= $this->_theme->baseUrl; ?>/assets/css/bootstrap-select.min.css" media="screen">
+<script src="<?= $this->_theme->baseUrl; ?>/assets/js/jquery.placeholders.min.js"></script>
+<script src="<?= $this->_theme->baseUrl; ?>/assets/js/bootstrap-select.min.js"></script>
+<script src="<?= $this->_theme->baseUrl; ?>/assets/js/bootstrap-select-zh-cn.js"></script>
 <script src="<?= $this->_theme->baseUrl; ?>/assets/js/bootstrap-filestyle.min.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="//cdn.bootcss.com/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.css" media="screen">
-<script src="//cdn.bootcss.com/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/jquery.datetimepicker.css">
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.datetimepicker.js"></script>
 
 <script>
 $('#Lesson_start_date_time').datetimepicker({

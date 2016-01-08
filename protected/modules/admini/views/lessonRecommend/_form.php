@@ -188,10 +188,10 @@ $(function(){
 	$("#xform").validationEngine();	
 });
 </script>
-
-<link rel="stylesheet" type="text/css"
-	href="//cdn.bootcss.com/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.css" media="screen">
-<script src="//cdn.bootcss.com/jquery-datetimepicker/2.4.5/jquery.datetimepicker.min.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/jquery.datetimepicker.css">
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.datetimepicker.js"></script>
 <script>
 
 $('#Lesson_start_date_time').datetimepicker({
