@@ -27,6 +27,7 @@
    	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <?php Yii::app() -> clientScript -> registerScriptFile($this -> _theme -> baseUrl . '/assets/js/ie10-viewport-bug-workaround.js', CClientScript::POS_END); ?>
+    <?php Yii::app() -> clientScript -> registerScriptFile($this -> _theme -> baseUrl . '/assets/js/viewport.js', CClientScript::POS_END); ?>    	
     <?php Yii::app() -> clientScript -> registerScriptFile($this -> _theme -> baseUrl . '/assets/js/site.js', CClientScript::POS_END); ?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
