@@ -177,7 +177,7 @@
 <!--multidatespicker-set-->
 <script>
     var dates = new Array();
-    var out_of_dates = <?=(empty($place->out_of_dates) ? '[]':$place->out_of_dates)?>;
+    var out_of_dates = <?=((empty($place->out_of_dates) || $place->out_of_dates === 'null') ? '[]':$place->out_of_dates)?>;
     out_of_dates.push(new Date()); //当天不可预约
 
     $(function () {

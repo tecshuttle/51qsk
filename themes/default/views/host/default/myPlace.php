@@ -172,29 +172,43 @@
     }
 </style>
 
+<!--参数配置见官网-->
+<!--http://multidatespickr.sourceforge.net/-->
 <script src="<?php echo $this->_theme->baseUrl ?>/assets/js/jquery-ui.multidatespicker.min.js"></script>
 
 <!--multidatespicker-set-->
 <script>
     var place_id = <?=$place->id?>;
-    var out_of_dates = <?=$place->out_of_dates?>;
+    var out_of_dates = <?=((empty($place->out_of_dates) || $place->out_of_dates === 'null') ? '[]':$place->out_of_dates)?>;
 
     $(function () {
-        $('#custom-date-format').multiDatesPicker({
+        var md_config = {
             minDate: 0, //设置最小日期
             //maxDate: 30 | 设置最大日期
-            addDates: out_of_dates,
+            //addDates: out_of_dates,
             adjustRangeToDisabled: true
-        });
+        };
 
-        $("#calendar-btn").click(function () {
+        if (out_of_dates.length > 0) {
+            md_config.addDates = out_of_dates;
+        }
+
+        $('#custom-date-format').multiDatesPicker(md_config);
+
+        $("#calendar-btn").click(function (a, b, c) {
+            $("#calendar-btn").attr("disabled", "disabled");
             var dates = $('#custom-date-format').multiDatesPicker('getDates');
 
             $.post('<?=$this->createUrl("/host/default/OutOfDates")?>', {
                 place_id: place_id,
                 dates: dates
             }, function (result) {
-                console.log(result);
+                $("#calendar-btn").html('已存');
+                var timer = setTimeout(function () {
+                    $("#calendar-btn").attr("disabled", false);
+                    $("#calendar-btn").html('保存');
+                    clearTimeout(timer);      //清除已设置的setTimeout对象
+                }, 1000);
             }, 'json')
         });
     });
