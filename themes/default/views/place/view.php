@@ -14,25 +14,25 @@
                     </h3>
 
                     <div class="rating-wrap">
-						<?php
+                        <?php
 
-						$rank = array(
-							'0.0' => '0', '0.5' => '0',
-							'1.0' => '1', '1.5' => '1-5',
-							'2.0' => '2', '2.5' => '2-5',
-							'3.0' => '3', '3.5' => '3-5',
-							'4.0' => '4', '4.5' => '4-5',
-							'5.0' => '5'
-						);
-						?>
+                        $rank = array(
+                            '0.0' => '0', '0.5' => '0',
+                            '1.0' => '1', '1.5' => '1-5',
+                            '2.0' => '2', '2.5' => '2-5',
+                            '3.0' => '3', '3.5' => '3-5',
+                            '4.0' => '4', '4.5' => '4-5',
+                            '5.0' => '5'
+                        );
+                        ?>
 
-						<div class="rating-container rating-uni rating-<?= $rank[$place->rank] ?>">
-							<div class="rating-stars"></div>
-						</div>
+                        <div class="rating-container rating-uni rating-<?= $rank[$place->rank] ?>">
+                            <div class="rating-stars"></div>
+                        </div>
 
-						<span class="number"><b><?php echo $place->rank; ?></b>分</span>
+                        <span class="number"><b><?php echo $place->rank; ?></b>分</span>
 
-					</div>
+                    </div>
 
 
                     <h5>场地简介:</h5>
@@ -77,7 +77,7 @@
                         <figure>
                             <!--这里是插件-->
                             <h4 class="text-warning">
-                            	<i class="fa fa-exclamation-circle"></i>&nbsp;不可预约为日期失效或已有约
+                                <i class="fa fa-exclamation-circle"></i>&nbsp;不可预约为日期失效或已有约
                             </h4>
 
                             <div id="custom-date-format" class="cp-date-format"></div>
@@ -177,20 +177,26 @@
 <!--multidatespicker-set-->
 <script>
     var dates = new Array();
+    var out_of_dates = <?=(empty($place->out_of_dates) ? '[]':$place->out_of_dates)?>;
+    out_of_dates.push(new Date()); //当天不可预约
+
     $(function () {
         var today = new Date();
+
         $('#custom-date-format').multiDatesPicker({
-            addDisabledDates: [<?php
+            /*addDisabledDates: [<?php
 								$places = PlaceBooking::Model()->findAllByAttributes(array('place_id'=>$place->id, 'status'=>1));
 								$dates = CHtml::listData($places, "id" ,"date");
 								array_push($dates, date('Y-m-d'));
 								foreach ($dates as $date){
 									echo "new Date('{$date}'),";
 								}
-								?>], //设置不能不能预约的日期
+								?>],*/ //设置不能不能预约的日期
+            addDisabledDates: out_of_dates,
             minDate: 0, //设置最小日期
+            //addDates: out_of_dates,
             //maxDate: 30 | 设置最大日期
-            adjustRangeToDisabled: true,
+            adjustRangeToDisabled: true
         });
         <?php if ($this->_cookiesGet('userType') != 'master'){?>
         //导师未登录，提示登录
