@@ -69,7 +69,7 @@
 							autoplay: true,
 							arrows: false,
 							nav: false,
-							delay: 5000,
+							delay: 6000,
 							speed: 300
 						});
 					});

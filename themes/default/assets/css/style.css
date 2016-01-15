@@ -4077,20 +4077,72 @@ hr.cp-hr-percent100 {
 	position: absolute;
 	z-index: 99;
 	display: block;
-	width: 400px;
-	height: 244px;
 	content: '';
-	background: url(../img/cloud.png) no-repeat;
-}
-
-.md-login-register .unslider:before {
-	top: 50px;
-	right: -150px;
 }
 
 .md-login-register .unslider:after {
 	top: 0;
 	left: -200px;
+	width: 354px;
+	height: 148px;
+	background: url(../img/cloud-left.png) no-repeat;
+	background-size: 100%;
+	-webkit-animation: cloudLeft 10s linear infinite alternate;
+	-moz-animation: cloudLeft 10s linear infinite alternate;
+	animation: cloudLeft 10s linear infinite alternate;
+	-ms-animation: cloudLeft 10s linear infinite alternate;
+	-o-animation: cloudLeft 10s linear infinite alternate;
+}
+
+@-webkit-keyframes cloudLeft {
+	0 {
+		left: 50px;
+	}
+	100% {
+		left: 200px;
+	}
+}
+
+@-moz-keyframes cloudLeft {
+	0 {
+		left: 50px;
+	}
+	100% {
+		left: 200px;
+	}
+}
+
+.md-login-register .unslider:before {
+	top: 130px;
+	right: -150px;
+	width: 493px;
+	height: 199px;
+	background: url(../img/cloud-right.png) no-repeat;
+	background-size: 100%;
+	-ms-behavior: url(backgroundsize.min.htc);
+	-webkit-animation: cloudRight 12s linear infinite alternate;
+	-moz-animation: cloudRight 12s linear infinite alternate;
+	animation: cloudRight 12s linear infinite alternate;
+	-ms-animation: cloudRight 12s linear infinite alternate;
+	-o-animation: cloudRight 12s linear infinite alternate;
+}
+
+@-webkit-keyframes cloudRight {
+	0 {
+		right: -15px;
+	}
+	100% {
+		right: 200px;
+	}
+}
+
+@-moz-keyframes cloudRight {
+	0 {
+		right: -15px;
+	}
+	100% {
+		right: 200px;
+	}
 }
 
 .md-login-register .unslider-fade {
@@ -4199,9 +4251,7 @@ hr.cp-hr-percent100 {
 	margin-bottom: 5px;
 }
 
-.md-register figcaption {
-	margin-top: -30px;
-}
+.md-register figcaption {}
 
 .md-register .form-control-link {
 	margin-left: 4px;
