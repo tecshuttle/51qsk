@@ -25,11 +25,7 @@
     <!-- Core javaScript -->
    	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
    	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-    <?php Yii::app() -> clientScript -> registerScriptFile($this -> _theme -> baseUrl . '/assets/js/ie10-viewport-bug-workaround.js', CClientScript::POS_END); ?>
-    <?php Yii::app() -> clientScript -> registerScriptFile($this -> _theme -> baseUrl . '/assets/js/viewport.js', CClientScript::POS_END); ?>    	
-    <?php Yii::app() -> clientScript -> registerScriptFile($this -> _theme -> baseUrl . '/assets/js/site.js', CClientScript::POS_END); ?>
-
+   	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if IE 8]>
@@ -50,7 +46,10 @@
     <![endif]-->
 </head>
 
-<body>
+<!--[if IE 8 ]> <body class="ie8 ie8down ie9down custom oldIE"> <![endif]-->
+<!--[if IE 9 ]> <body class="ie9 ie9down custom oldIE"> <![endif]-->
+<!--[if (gt IE 9) ]> <body class="modern custom"> <![endif]-->
+<!--[!(IE)]><!--> <body class="notIE modern custom"> <!--<![endif]-->
 
 <div class="site-wrap">
 
@@ -319,10 +318,21 @@
 
 </div>
 
+<!-- Placed at the end of the document so the pages load faster -->	
 <script src="//cdn.bootcss.com/jquery.matchHeight/0.6.0/jquery.matchHeight-min.js"></script>
 <script src="//cdn.bootcss.com/scrollup/2.4.0/jquery.scrollUp.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-select/1.7.1/js/bootstrap-select.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap-select/1.7.1/js/i18n/defaults-zh_CN.min.js"></script>
 <script src="//cdn.bootcss.com/jquery-placeholder/2.1.3/jquery.placeholder.min.js"></script>
+<script src="<?php echo $this->_theme->baseUrl ?>/assets/js/ie10-viewport-bug-workaround.js"></script> 
+<script src="<?php echo $this->_theme->baseUrl ?>/assets/js/site.js"></script>   
+<script src="<?php echo $this->_theme->baseUrl ?>/assets/js/viewport-units-buggyfill.js"></script>
+<script src="<?php echo $this->_theme->baseUrl ?>/assets/js/viewport-units-buggyfill.hacks.js"></script>
+<script>
+	window.viewportUnitsBuggyfill.init({
+		refreshDebounceWait: 50,
+		hacks: window.viewportUnitsBuggyfillHacks
+	});
+</script>
 </body>
 </html>

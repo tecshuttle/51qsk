@@ -35,33 +35,33 @@
   };
   
 }( jQuery, window ));
-
-$('html').css({
-  width: '100vw',
-});
-
-$('body').css({
-  width: '100vw',
-});
-
-$('.site-wrap').css({
-  width: '100vw',
-});
-
-$('.site-slides').css({
-  width: '100vw',
-});
-
-
-$('.site-header').css({
-  width: '100vw',
-});
-
-$('.site-main').css({
-  width: '100vw',
-});
-
-$('.site-footer').css({
-  width: '100vw',
-});
+//
+//$('html').css({
+//width: '100vw',
+//});
+//
+//$('body').css({
+//width: '100vw',
+//});
+//
+//$('.site-wrap').css({
+//width: '100vw',
+//});
+//
+//$('.site-slides').css({
+//width: '100vw',
+//});
+//
+//
+//$('.site-header').css({
+//width: '100vw',
+//});
+//
+//$('.site-main').css({
+//width: '100vw',
+//});
+//
+//$('.site-footer').css({
+//width: '100vw',
+//});
 

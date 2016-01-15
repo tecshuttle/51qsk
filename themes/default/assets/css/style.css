@@ -1,5 +1,3 @@
-	@charset "utf-8";
-
 /*==============================▼ Fix IE10 & Windows Phone 8 ▼==============================*/
 
 @-webkit-viewport {
@@ -21,6 +19,21 @@
 @viewport {
 	width: device-width;
 }
+
+
+
+/*Fixing Cross-Browser Issues With CSS3 Viewport Units in IE9+ and Safari for iOS*/
+html,
+body,
+.site-wrap,
+.site-slides,
+.site-header,
+.site-main,
+.site-footer{
+	width: 100vw;
+  	content: 'viewport-units-buggyfill; width: 100vw;';	
+}
+
 
 
 /*==============================▼Bootstrap.css增强版▼==============================*/
@@ -4063,7 +4076,6 @@ hr.cp-hr-percent100 {
 .md-login-register .unslider:before,
 .md-login-register .unslider:after {
 	position: absolute;
-	top: 0;
 	z-index: 99;
 	display: block;
 	width: 400px;
@@ -4073,10 +4085,12 @@ hr.cp-hr-percent100 {
 }
 
 .md-login-register .unslider:before {
-	right: -200px;
+	top: 50px;
+	right: -150px;
 }
 
 .md-login-register .unslider:after {
+	top: 0;
 	left: -200px;
 }
 
@@ -5013,14 +5027,13 @@ hr.cp-hr-percent100 {
 	margin-bottom: 5px;
 }
 
-.contact-wrap .contact-diy{
+.contact-wrap .contact-diy {
 	padding-left: 50px;
 }
 
-
-.contact-wrap .contact-verification{
+.contact-wrap .contact-verification {
 	font-size: 16px;
-    color: #a94442;	
+	color: #a94442;
 }
 
 .contact-wrap .form-horizontal {
@@ -5068,6 +5081,7 @@ hr.cp-hr-percent100 {
 	background-color: #940908;
 	border-color: #9d0403;
 }
+
 .contact-wrap .form-horizontal .form-control-static {
 	color: red;
 }
