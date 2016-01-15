@@ -58,19 +58,22 @@
             </aside>
 
             <section class="admin-content pull-right match-item">
-                <br/> <br/>                
-                <?php echo $bagecmsPage['content'] ?>
+            	                                	
 				<?php if(Yii::app()->request->getParam('name') === 'contact'):?>
 				<div class="contact-wrap">
-					<div class="col-xs-offset-2 col-xs-9">
-						<h4 class="text-danger text-right">
-						   <?php
-							$success = Yii::app()->user->getFlash('success');
-							if($success != null){
-								echo '<i class="fa fa-exclamation-circle"></i>'.$success;
-							}?>
-					   </h4>
-					</div>
+													
+					<section class="contact-diy">
+						<?php echo $bagecmsPage['content'] ?>	
+					</section>
+					
+					<h5 class="contact-verification">
+					   <?php
+						$success = Yii::app()->user->getFlash('success');
+						if($success != null){
+							echo '<i class="fa fa-exclamation-circle"></i>'.$success;
+						}?>
+				   </h5>				   
+				   
 					<?php $form = $this->beginWidget('CActiveForm', array(
 						'id' => 'contact-form',
 						'htmlOptions' => array('class' => 'form-horizontal')
@@ -79,19 +82,15 @@
 							<div class="col-xs-6">
 								<label class="sr-only" for="name"><span style="color:red">*</span>姓名</label>
 								<?php echo $form->textField($contactModel, 'name', array('class' => 'form-control', 'placeholder' => '姓名')); ?>
-								<p class="form-control-static">
-                                    <?php echo $form->error($contactModel, 'name'); ?>
-								</p>		
-									
+								
+                                <?php echo $form->error($contactModel, 'name'); ?>																		
 							</div>
 							
 							<div class="col-xs-6">
 								<label class="sr-only" for="company">公司（选填）</label>
 								<?php echo $form->textField($contactModel, 'company', array('class' => 'form-control', 'placeholder' => '公司（选填）')); ?>
-								<p class="form-control-static">
-                                    <?php echo $form->error($contactModel, 'company'); ?>
-								</p>		
 									
+                                <?php echo $form->error($contactModel, 'company'); ?>									
 							</div>
 						</div>
 
@@ -99,17 +98,14 @@
 							<div class="col-xs-6">
 								<label class="sr-only" for="cellphone"><span style="color:red">*</span>手机</label>
 								<?php echo $form->textField($contactModel, 'cellphone', array('class' => 'form-control', 'placeholder' => '手机')); ?>
-								<p class="form-control-static">
-                                    <?php echo $form->error($contactModel, 'cellphone'); ?>
-								</p>		
-									
+
+                                <?php echo $form->error($contactModel, 'cellphone'); ?>											
 							</div>
 							<div class="col-xs-6">
 								<label class="sr-only" for="email"><span style="color:red">*</span>邮箱</label>
 								<?php echo $form->textField($contactModel, 'email', array('class' => 'form-control', 'placeholder' => '邮箱')); ?>
-								<p class="form-control-static">
-                                    <?php echo $form->error($contactModel, 'email'); ?>
-								</p>		
+									
+                                <?php echo $form->error($contactModel, 'email'); ?>		
 							</div>
 						</div>
 						
@@ -117,16 +113,15 @@
 							<div class="col-xs-12">
 								<label class="sr-only" for="message"><span style="color:red">*</span>留言信息</label>
 								<?php echo $form->textarea($contactModel, 'message', array('rows' => 9, 'class' => 'form-control', 'placeholder' => '留言信息')); ?>
-								<p class="form-control-static">
-                                    <?php echo $form->error($contactModel, 'message'); ?>
-								</p>		
+
+                                <?php echo $form->error($contactModel, 'message'); ?>		
 							</div>
 						</div>
 					
 						<div class="form-group">
 							<div class="col-xs-12">
-								<button type="submit" class="btn btn-block btn-lg btn-danger">
-									确认提交
+								<button type="submit" class="btn btn-danger btn-lg-padding">
+									提交
 								</button>
 							</div>
 						</div>     

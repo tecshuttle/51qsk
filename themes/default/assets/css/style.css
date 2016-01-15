@@ -1,4 +1,4 @@
-@charset "utf-8";
+	@charset "utf-8";
 
 /*==============================▼ Fix IE10 & Windows Phone 8 ▼==============================*/
 
@@ -4052,11 +4052,12 @@ hr.cp-hr-percent100 {
 	-ms-behavior: url(backgroundsize.min.htc);
 }
 
+
 /*动画组件*/
 
 .md-login-register .unslider {
 	height: 455px;
-	overflow: hidden;	
+	overflow: hidden;
 }
 
 .md-login-register .unslider:before,
@@ -4080,7 +4081,7 @@ hr.cp-hr-percent100 {
 }
 
 .md-login-register .unslider-fade {
-	position: relative;	
+	position: relative;
 	height: 455px;
 	overflow: hidden;
 }
@@ -4994,6 +4995,7 @@ hr.cp-hr-percent100 {
 /*=====================联系我们======================*/
 
 .contact-wrap {
+	padding-top: 15px;
 	padding-left: 50px;
 }
 
@@ -5011,6 +5013,16 @@ hr.cp-hr-percent100 {
 	margin-bottom: 5px;
 }
 
+.contact-wrap .contact-diy{
+	padding-left: 50px;
+}
+
+
+.contact-wrap .contact-verification{
+	font-size: 16px;
+    color: #a94442;	
+}
+
 .contact-wrap .form-horizontal {
 	width: 550px;
 }
@@ -5019,12 +5031,6 @@ hr.cp-hr-percent100 {
 	display: block;
 	width: 100%;
 	background-color: #e1e1e1;
-	border-radius: 0;
-}
-
-.contact-wrap .form-horizontal input.form-control {
-	height: 50px;
-	line-height: 50px;
 }
 
 .contact-wrap .form-horizontal textarea.form-control {
@@ -5033,32 +5039,35 @@ hr.cp-hr-percent100 {
 
 .contact-wrap .form-horizontal .form-control::-webkit-input-placeholder {
 	color: #999;
-	font-size: 18px;
 }
 
 .contact-wrap .form-horizontal .form-control:-moz-placeholder {
 	color: #999;
-	font-size: 18px;
 }
 
 .contact-wrap .form-horizontal .form-control::-moz-placeholder {
 	color: #999;
-	font-size: 18px;
 }
 
 .contact-wrap .form-horizontal .form-control:-ms-input-placeholder {
 	color: #999;
-	font-size: 18px;
 }
 
 .contact-wrap .form-horizontal button[type="submit"].btn {
 	margin-top: 0;
-	font-size: 30px;
-	background-color: #87131d;
-	border-color: #87131d;
-	border-radius: 0;
+	background-color: #ab1514;
+	border-color: #9f1716;
 }
 
+.contact-wrap .form-horizontal button[type="submit"].btn:hover,
+.contact-wrap .form-horizontal button[type="submit"].btn:focus,
+.contact-wrap .form-horizontal button[type="submit"].btn.focus,
+.contact-wrap .form-horizontal button[type="submit"].btn:active,
+.contact-wrap .form-horizontal button[type="submit"].btn.active {
+	color: #fff;
+	background-color: #940908;
+	border-color: #9d0403;
+}
 .contact-wrap .form-horizontal .form-control-static {
 	color: red;
 }
