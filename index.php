@@ -9,11 +9,11 @@
  * @license       http://www.bagecms.com/license
  * @version       v3.1.0
  */
-error_reporting(0);
-//error_reporting(E_ERROR | E_WARNING | E_PARSE);
+//error_reporting(0);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 define('DS', DIRECTORY_SEPARATOR);
 define('WWWPATH', str_replace(array('\\', '\\\\'), '/', dirname(__FILE__)));
-defined('YII_DEBUG') or define('YII_DEBUG',false);
+defined('YII_DEBUG') or define('YII_DEBUG',true);
 // specify how many levels of call stack should be shown in each log message
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
