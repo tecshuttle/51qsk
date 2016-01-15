@@ -15,96 +15,94 @@ class DefaultController extends XUserBase
         $this->redirect(array('/host/default/Info'));
     }
 
-	public function actionMyPlaceComment()
-	{
-		$this->render('myplacecomment', array(
-            
-        ));
-	}
-	
-	public function isStatus()
-	{
-		$hostStatus = Host::model()->findByPk(array('id' => $this->_cookiesGet('userId')));
-		
-		$hostStatus->status;
-		
-		return $hostStatus->status;
-	}
-	
+    public function actionMyPlaceComment()
+    {
+        $this->render('myplacecomment', array());
+    }
+
+    public function isStatus()
+    {
+        $hostStatus = Host::model()->findByPk(array('id' => $this->_cookiesGet('userId')));
+
+        $hostStatus->status;
+
+        return $hostStatus->status;
+    }
+
     public function actionMyPlace()
     {
-		$placeCriteria = new CDbCriteria();
-		$placeBookingCriteria = new CDbCriteria();
-		$placeReviewCriteria = new CDbCriteria();
-		
-		//我的场地
+        $placeCriteria = new CDbCriteria();
+        $placeBookingCriteria = new CDbCriteria();
+        $placeReviewCriteria = new CDbCriteria();
+
+        //我的场地
         $placeCriteria->order = 'id DESC';
         $placeCriteria->addCondition("host_id = '{$this->_cookiesGet('userId')}'");
 
         $place = Place::model()->find($placeCriteria);
-		
-		//客户评分
-		$placeReviewCriteria->order = 'id DESC';
-		$placeReviewCriteria->addCondition("place_id = '{$place['id']}'");
-		
-		$placeReview = PlaceReview::model()->findAll($placeReviewCriteria);
-		//场地信息
-		//$placeBookingCriteria->select = "'t.*'";
-		//$placeBookingCriteria->join = 'LEFT JOIN seed_place_booking as sl ON t.id=sl.teacher_id';
-		//$placeBookingCriteria->addCondition('sl.place_id=:place_id');
-		//$placeBookingCriteria->params[':place_id']=$place->id;
-		
-		//场地信息分页
+
+        //客户评分
+        $placeReviewCriteria->order = 'id DESC';
+        $placeReviewCriteria->addCondition("place_id = '{$place['id']}'");
+
+        $placeReview = PlaceReview::model()->findAll($placeReviewCriteria);
+        //场地信息
+        //$placeBookingCriteria->select = "'t.*'";
+        //$placeBookingCriteria->join = 'LEFT JOIN seed_place_booking as sl ON t.id=sl.teacher_id';
+        //$placeBookingCriteria->addCondition('sl.place_id=:place_id');
+        //$placeBookingCriteria->params[':place_id']=$place->id;
+
+        //场地信息分页
         //$count = Teacher::model()->count($placeBookingCriteria);
         //$pager = new CPagination($count);
         //$pager->pageSize = 5;
         //$pager->applyLimit($placeBookingCriteria);
         $teachers = $this->getTeachers($place->id);
-				
+
         $this->render('myPlace', array(
             'place' => $place,
-			'teachers' => $teachers,
-			'placeReview' => $placeReview,
-			//是否通过审核
-			'status' => $this->isStatus(),
-			//'count' => $count,
-			//'pager' => $pager
+            'teachers' => $teachers,
+            'placeReview' => $placeReview,
+            //是否通过审核
+            'status' => $this->isStatus(),
+            //'count' => $count,
+            //'pager' => $pager
         ));
     }
 
     public function actionAddPlace()
     {
         $model = new Place;
-		$imageList = $this->_gets->getPost( 'imageList' );
-		$imageListSerialize = XUtils::imageListSerialize($imageList);
+        $imageList = $this->_gets->getPost('imageList');
+        $imageListSerialize = XUtils::imageListSerialize($imageList);
 
         if (isset($_POST['Place'])) {
             $model->attributes = $_POST['Place'];
             $model->host_id = $this->_user['hostId'];
-			$model->pic_other = $imageListSerialize['dataSerialize'];
+            $model->pic_other = $imageListSerialize['dataSerialize'];
 
             $file = XUpload::upload($_FILES['attach']);
-			$adr = XUpload::upload($_FILES['pic_adr']);
-			
+            $adr = XUpload::upload($_FILES['pic_adr']);
+
             if (is_array($file)) {
                 $model->pic = $file['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
-			
-			// if ($model->pic == null){
-					// Yii::app()->user->setFlash('picMessage','主页图不能为空');
-				// }
-				
-			if (is_array($adr)) {
+
+            // if ($model->pic == null){
+            // Yii::app()->user->setFlash('picMessage','主页图不能为空');
+            // }
+
+            if (is_array($adr)) {
                 $model->pic_adr = $adr['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
-			
-			if ($model->pic_adr == null){
-					Yii::app()->user->setFlash('picAdrMessage','主图不能为空');
-				}
+
+            if ($model->pic_adr == null) {
+                Yii::app()->user->setFlash('picAdrMessage', '主图不能为空');
+            }
             if ($model->validate() && $model->save()) {
                 $this->redirect(array('/host/default/myplace'));
             }
@@ -112,82 +110,93 @@ class DefaultController extends XUserBase
 
         $this->render('addplace', array(
             'model' => $model,
-			'imageList'=>$imageListSerialize['data']
+            'imageList' => $imageListSerialize['data']
         ));
     }
 
     public function actionUpdatePlace()
     {
         $model = Place::model()->findByPk($_GET['id']);
-		$imageList = $this->_gets->getParam( 'imageList' );
+        $imageList = $this->_gets->getParam('imageList');
         $imageListSerialize = XUtils::imageListSerialize($imageList);
-		
+
         if (isset($_POST['Place'])) {
             $model->attributes = $_POST['Place'];
-			$model->pic_other = $imageListSerialize['dataSerialize'];
+            $model->pic_other = $imageListSerialize['dataSerialize'];
 
             $file = XUpload::upload($_FILES['attach']);
-			$adr = XUpload::upload($_FILES['pic_adr']);
-			
+            $adr = XUpload::upload($_FILES['pic_adr']);
+
             if (is_array($file)) {
                 $model->pic = $file['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
-			if (is_array($adr)) {
+            if (is_array($adr)) {
                 $model->pic_adr = $adr['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
-			
+
             if ($model->validate() && $model->save()) {
                 $this->redirect(array('/host/default/myplace'));
             }
         }
-		
-		if ( $imageList )
-            $imageList =  $imageListSerialize['data'];
-        elseif($model->pic_other)
+
+        if ($imageList)
+            $imageList = $imageListSerialize['data'];
+        elseif ($model->pic_other)
             $imageList = unserialize($model->pic_other);
-			
-        $this->render('addplace', array('model' => $model,'imageList'=>$imageList));
+
+        $this->render('addplace', array('model' => $model, 'imageList' => $imageList));
+    }
+
+    public function actionOutOfDates()
+    {
+        $dates = json_encode(Yii::app()->request->getParam('dates'));
+        $id = Yii::app()->request->getParam('place_id');
+
+        $model = Place::model()->findByPk($id);
+        $model->out_of_dates = $dates;
+        $model->save();
+
+        die(CJSON::encode(array('status' => 'success')));
     }
 
     public function actionInfo()
     {
 
         $model = HostUpdate::model()->findByPk($this->_user['hostId']);
-	
 
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-		if (isset($_POST['HostUpdate'])) {
+        if (isset($_POST['HostUpdate'])) {
             $model->attributes = $_POST['HostUpdate'];
 
             $file = XUpload::upload($_FILES['attach']);
-			
+
             if (is_array($file)) {
                 $model->pic = $file['pathname'];
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
-			
-			$head = XUpload::upload($_FILES['head_portrait']);
+
+            $head = XUpload::upload($_FILES['head_portrait']);
 
             if (is_array($head)) {
                 $model->head_portrait = $head['pathname'];
-				
+
                 @unlink($_POST['oAttach']);
                 @unlink($_POST['oThumb']);
             }
 
             if ($model->validate() AND $model->save()) {
-				$cookie = new CHttpCookie('userName', $model->name);
+                $cookie = new CHttpCookie('userName', $model->name);
                 Yii::app()->request->cookies['userName'] = $cookie;
-				
-				Yii::app()->user->setFlash('success', '保存成功！');
+
+                Yii::app()->user->setFlash('success', '保存成功！');
                 $this->redirect(array('/host/default/Info'));
             }
         }
@@ -240,8 +249,8 @@ class DefaultController extends XUserBase
 
         die(CJSON::encode(array('status' => 'success')));
     }
-	
-	private function getTeachers($place_id)
+
+    private function getTeachers($place_id)
     {
         $teachers = Yii::app()->db->createCommand()
             ->select('l.*, sl.*')

@@ -19,36 +19,36 @@ class DefaultController extends XUserBase
         if (isset($_POST['TeacherUpdate'])) {
             $model->attributes = $_POST['TeacherUpdate'];
 
-			$file = XUpload::upload($_FILES['attach']);
- 
-                if (is_array($file)) {
-                    $model->pic = $file['pathname'];
-                    @unlink($_POST['oAttach']);
-                    @unlink($_POST['oThumb']);
-                }
-                
-				$degree = XUpload::upload($_FILES['degree']);
-			
-				if (is_array($degree)) {
-					$model->degree = $degree['pathname'];
-					@unlink($_POST['oAttach']);
-					@unlink($_POST['oThumb']);
-				}
-				
-				if ($model->degree == null){
-					Yii::app()->user->setFlash('degreeMessage','资格证不能为空');
-				}
-					
-				if ($model->pic == null){
-					Yii::app()->user->setFlash('picMessage','讲师头像不能为空');
-				}
-				
+            $file = XUpload::upload($_FILES['attach']);
+
+            if (is_array($file)) {
+                $model->pic = $file['pathname'];
+                @unlink($_POST['oAttach']);
+                @unlink($_POST['oThumb']);
+            }
+
+            $degree = XUpload::upload($_FILES['degree']);
+
+            if (is_array($degree)) {
+                $model->degree = $degree['pathname'];
+                @unlink($_POST['oAttach']);
+                @unlink($_POST['oThumb']);
+            }
+
+            if ($model->degree == null) {
+                Yii::app()->user->setFlash('degreeMessage', '资格证不能为空');
+            }
+
+            if ($model->pic == null) {
+                Yii::app()->user->setFlash('picMessage', '讲师头像不能为空');
+            }
+
             if ($model->validate() && $model->pic != null && $model->degree != null) {
                 if ($model->save()) {
-					$cookie = new CHttpCookie('userName', $model->name);
-					Yii::app()->request->cookies['userName'] = $cookie;
-					
-					Yii::app()->user->setFlash('success', '保存成功！');
+                    $cookie = new CHttpCookie('userName', $model->name);
+                    Yii::app()->request->cookies['userName'] = $cookie;
+
+                    Yii::app()->user->setFlash('success', '保存成功！');
                     $this->redirect(array('/master'));
                 }
             }
@@ -82,7 +82,7 @@ class DefaultController extends XUserBase
 
         $this->render('mylesson', array(
             'lessons' => $lessons,
-			'status' => $this->isStatus(),
+            'status' => $this->isStatus(),
             'count' => $count,
             'pager' => $pager,
         ));
@@ -156,22 +156,22 @@ class DefaultController extends XUserBase
             $model->attributes = $_POST['Lesson'];
             $model->teacher_id = $this->_user['masterId'];
 
-			$file = XUpload::upload($_FILES['attach']);
-			
-				if (is_array($file)) {
-					$model->pic = $file['pathname'];
-					@unlink($_POST['oAttach']);
-					@unlink($_POST['oThumb']);
-				}
-				
-				if ($model->pic == null){
-					Yii::app()->user->setFlash('picMessage','封面不能为空');
-				}
-				
+            $file = XUpload::upload($_FILES['attach']);
+
+            if (is_array($file)) {
+                $model->pic = $file['pathname'];
+                @unlink($_POST['oAttach']);
+                @unlink($_POST['oThumb']);
+            }
+
+            if ($model->pic == null) {
+                Yii::app()->user->setFlash('picMessage', '封面不能为空');
+            }
+
             if ($model->validate()) {
                 if ($model->save()) {
-					$this->redirect(array('mylesson'));
-				}
+                    $this->redirect(array('mylesson'));
+                }
             }
         }
 
@@ -189,7 +189,7 @@ class DefaultController extends XUserBase
 
         if (isset($_POST['Lesson'])) {
             $model->attributes = $_POST['Lesson'];
-			
+
             $file = XUpload::upload($_FILES['attach']);
 
             if (is_array($file)) {
@@ -224,7 +224,7 @@ class DefaultController extends XUserBase
         $this->render('place', array(
             'placeBookings' => $placeBookings,
             'count' => $count,
-			'status' => $this->isStatus(),
+            'status' => $this->isStatus(),
             'pager' => $pager,
         ));
     }
@@ -241,16 +241,16 @@ class DefaultController extends XUserBase
 
             if ($teacherModel->validate()) {
                 $new_password = Teacher::model()->findbyPk($this->_user['masterId']);
-				
+
 
                 $new_password->password = $teacherModel->password;
                 $new_password->verifyPassword = $teacherModel->password;
 
                 if ($new_password->save()) {
                     Yii::app()->user->setFlash('success', '保存成功');
-					
-                
-				}
+
+
+                }
             }
         }
 
@@ -260,9 +260,9 @@ class DefaultController extends XUserBase
 
     public function actionBookPlace()
     {
-
         $dates = Yii::app()->request->getParam('dates');
         $id = Yii::app()->request->getParam('place_id');
+
         foreach ($dates as $date) {
             $model = new PlaceBooking;
             $model->place_id = $id;
@@ -271,6 +271,7 @@ class DefaultController extends XUserBase
             $model->status = 1;
             $model->save();
         }
+
         die(CJSON::encode(array('status' => 'success')));
     }
 
@@ -339,52 +340,51 @@ class DefaultController extends XUserBase
 
         $this->render('mybooks', array(
             'books' => $books,
-			'status' => $this->isStatus(),
+            'status' => $this->isStatus(),
             'count' => $count,
             'pager' => $pager,
         ));
     }
-	
-	public function actionReview()
-	{
-		$message = false;
-		$place = Place::model()->findByPk($_GET['id']);
-		$host = Host::model()->findByPk($place['host_id']);
-		
-		$model = PlaceReview::model()->findByAttributes(array('place_id' => $_GET['id'], 'teacher_id' => $this->_user['masterId']));
-		
-		if(!count($model)){
-			$model = new PlaceReview;
-		}
-		
-		if(isset($_POST['PlaceReview']))
-		{
-			$model->attributes=$_POST['PlaceReview'];
-			
-			$model->place_id = $_GET['id'];
-			$model->teacher_id = $this->_user['masterId'];
-			
-			if($model->save()){
-				$message = true;
-			}
-		}
-		
-		$this->render('review',array(
-			'place' => $place,
-			'host' => $host,
-			'message' => $message,
-			'model' => $model,
-		));
-	}
-	
-	public function isStatus()
-	{
-		$teacherStatus = Teacher::model()->findByPk(array('id' => $this->_cookiesGet('userId')));
-		
-		$teacherStatus->status;
-		
-		return $teacherStatus->status;
-	}
+
+    public function actionReview()
+    {
+        $message = false;
+        $place = Place::model()->findByPk($_GET['id']);
+        $host = Host::model()->findByPk($place['host_id']);
+
+        $model = PlaceReview::model()->findByAttributes(array('place_id' => $_GET['id'], 'teacher_id' => $this->_user['masterId']));
+
+        if (!count($model)) {
+            $model = new PlaceReview;
+        }
+
+        if (isset($_POST['PlaceReview'])) {
+            $model->attributes = $_POST['PlaceReview'];
+
+            $model->place_id = $_GET['id'];
+            $model->teacher_id = $this->_user['masterId'];
+
+            if ($model->save()) {
+                $message = true;
+            }
+        }
+
+        $this->render('review', array(
+            'place' => $place,
+            'host' => $host,
+            'message' => $message,
+            'model' => $model,
+        ));
+    }
+
+    public function isStatus()
+    {
+        $teacherStatus = Teacher::model()->findByPk(array('id' => $this->_cookiesGet('userId')));
+
+        $teacherStatus->status;
+
+        return $teacherStatus->status;
+    }
 }
 
 //end file
