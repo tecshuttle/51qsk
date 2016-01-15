@@ -21,19 +21,18 @@
 }
 
 
-
 /*Fixing Cross-Browser Issues With CSS3 Viewport Units in IE9+ and Safari for iOS*/
+
 html,
 body,
 .site-wrap,
 .site-slides,
 .site-header,
 .site-main,
-.site-footer{
+.site-footer {
 	width: 100vw;
-  	content: 'viewport-units-buggyfill; width: 100vw;';	
+	content: 'viewport-units-buggyfill; width: 100vw;';
 }
-
 
 
 /*==============================▼Bootstrap.css增强版▼==============================*/
@@ -5027,9 +5026,7 @@ hr.cp-hr-percent100 {
 	margin-bottom: 5px;
 }
 
-.contact-wrap .contact-diy {
-	padding-left: 50px;
-}
+.contact-wrap .contact-diy {}
 
 .contact-wrap .contact-verification {
 	font-size: 16px;
