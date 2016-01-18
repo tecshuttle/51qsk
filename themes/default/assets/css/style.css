@@ -4125,6 +4125,8 @@ hr.cp-hr-percent100 {
 	animation: cloudRight 12s linear infinite alternate;
 	-ms-animation: cloudRight 12s linear infinite alternate;
 	-o-animation: cloudRight 12s linear infinite alternate;
+	opacity: .8;
+	filter: alpha(opacity=80);	
 }
 
 @-webkit-keyframes cloudRight {
