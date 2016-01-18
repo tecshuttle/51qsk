@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=1030, initial-scale=1.0">
+    <meta name="viewport" content="width=1030">
 	<meta name="renderer" content="webkit">
 	<meta name="force-rendering" content="webkit">
 	<meta http-equiv="Cache-Control" content="no-siteapp">
@@ -263,11 +263,13 @@
 	<!--图片滑过特效-->
 	<script src="<?php echo $this->_theme->baseUrl ?>/assets/js/modernizr.custom.js"></script>
 	<script src="<?php echo $this->_theme->baseUrl ?>/assets/js/jquery.hoverdir.js"></script>
-	<script>$(function() {
-	$('#cp-recom-thumbs > figure').each(function() {
-		$(this).hoverdir();
+	<script>
+	$(function() {
+		$('#cp-recom-thumbs > figure').each(function() {
+			$(this).hoverdir();
+		});
 	});
-});</script>
+	</script>
 	<!--/.cp-subject end-->
 
 
