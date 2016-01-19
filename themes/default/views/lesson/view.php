@@ -12,8 +12,9 @@
                     <h3 class="media-heading"><?= $lesson->name ?></h3>
 
                     <span class="center-block date">
-                        开课时间：<?= DATE_FORMAT(DATE_CREATE($lesson->start_date_time), 'Y年m月d日 H:i') ?>-<?= DATE_FORMAT(DATE_CREATE($lesson->end_date_time), 'H:i') ?>
+                        开课时间：<?= DATE_FORMAT(DATE_CREATE($lesson->start_date_time), 'Y年m月d日H:i') ?> -<?= DATE_FORMAT(DATE_CREATE($lesson->end_date_time), 'm月d日 H:i') ?>
                     </span>
+
 
                     <ul class="list-inline master">
                         <li>
