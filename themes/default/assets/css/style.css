@@ -4906,7 +4906,9 @@ hr.cp-hr-percent100 {
 }
 
 .payment-alipay {
-	background: url(../img/admin/payment.jpg) no-repeat 0 0;
+	background: white url(../img/admin/payment.gif) no-repeat center center;
+	background-size: contain;
+	-ms-behavior: url(backgroundsize.min.htc);
 }
 
 .payment-name {
