@@ -4126,7 +4126,7 @@ hr.cp-hr-percent100 {
 	-ms-animation: cloudRight 12s linear infinite alternate;
 	-o-animation: cloudRight 12s linear infinite alternate;
 	opacity: .8;
-	filter: alpha(opacity=80);	
+	filter: alpha(opacity=80);
 }
 
 @-webkit-keyframes cloudRight {
@@ -4907,10 +4907,6 @@ hr.cp-hr-percent100 {
 
 .payment-alipay {
 	background: url(../img/admin/payment.jpg) no-repeat 0 0;
-}
-
-.payment-alipay {
-	position: 0 0;
 }
 
 .payment-name {
